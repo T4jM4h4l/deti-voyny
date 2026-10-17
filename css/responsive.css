@@ -1,0 +1,180 @@
+/* responsive.css — адаптивные стили (Занятие 4, mobile-first) */
+
+/* ===== Задание 2. Базовые (мобильные) стили — от 320 px ===== */
+header {
+  padding: 14px 12px;
+}
+
+main {
+  padding: 16px 12px;
+}
+
+section {
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: 1.7rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+.ticker {
+  margin: 14px -12px -14px;
+}
+
+.page {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  padding: 16px 12px;
+}
+
+.page__main {
+  min-width: 0;
+}
+
+.page__aside {
+  display: none;
+}
+
+.burger {
+  display: block;
+}
+
+.burger-close {
+  display: none;
+}
+
+.menu-toggle:checked + .burger .burger-open {
+  display: none;
+}
+
+.menu-toggle:checked + .burger .burger-close {
+  display: inline;
+}
+
+.topnav ul {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.menu-toggle:checked ~ ul {
+  display: flex;
+}
+
+.topnav a {
+  padding: 10px 18px;
+}
+
+/* ===== Задание 3. Планшетная версия — от 768 px ===== */
+@media (min-width: 768px) {
+  .page {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 24px;
+    padding: 20px 16px;
+  }
+
+  .page__aside {
+    display: block;
+    position: static;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card .btn {
+    align-self: flex-start;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .topnav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+}
+
+/* ===== Задание 4. Ноутбучная версия — от 1024 px ===== */
+@media (min-width: 1024px) {
+  .page {
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 32px;
+    padding: 24px 16px;
+  }
+
+  .page__aside {
+    position: sticky;
+    top: 64px;
+  }
+}
+
+/* ===== Задание 5. Широкая версия — от 1440 px ===== */
+@media (min-width: 1440px) {
+  .page {
+    max-width: 1280px;
+    gap: 40px;
+    padding: 32px 48px;
+  }
+
+  main {
+    max-width: 1000px;
+    padding: 40px 32px;
+  }
+}
+
+/* ===== Задание 7. Адаптация таблиц и блоков ===== */
+.table-scroll {
+  overflow-x: auto;
+}
+
+/* ===== Задание 8. Кроссбраузерность ===== */
+
+/* 8.1. Префиксные дубли (animation, transition, transform, filter) удалены:
+   эти свойства поддерживаются без префиксов во всех целевых браузерах. */
+
+
+/* 8.2. «Матовое стекло» для закреплённой полосы меню — только при поддержке backdrop-filter */
+@supports ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px))) {
+  .topnav {
+    background: rgba(142, 18, 24, 0.85);
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+  }
+}
+
+/* запасной вариант — непрозрачный фон, если размытие не поддерживается */
+@supports not ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px))) {
+  .topnav {
+    background: #8e1218;
+  }
+}
+
+/* ===== Занятие 5. Чек-лист: варианты ответа ===== */
+.checklist-answers {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .checklist-answers {
+    flex-direction: row;
+    align-items: center;
+    gap: 14px 22px;
+  }
+}

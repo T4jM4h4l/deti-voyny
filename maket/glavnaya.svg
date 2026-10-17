@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="2680" viewBox="0 0 1200 2680" font-family="Helvetica, Arial, sans-serif">
+<title>Макет главной страницы «Дети войны» — скелет всех разделов (тексты-заглушки)</title>
+<defs>
+  <linearGradient id="headerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#9e161d"/>
+    <stop offset="50%" stop-color="#8e1218"/>
+    <stop offset="100%" stop-color="#1c6e37"/>
+  </linearGradient>
+  <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#7a1218"/>
+    <stop offset="48%" stop-color="#a6291f"/>
+    <stop offset="100%" stop-color="#1c6e37"/>
+  </linearGradient>
+  <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#ffffff"/>
+    <stop offset="100%" stop-color="#eef2e6"/>
+  </linearGradient>
+  <radialGradient id="radialCard" cx="50%" cy="12%" r="75%">
+    <stop offset="0%" stop-color="#7fd18b"/>
+    <stop offset="45%" stop-color="#1f7a3d"/>
+    <stop offset="100%" stop-color="#0c2b16"/>
+  </radialGradient>
+  <pattern id="wood" width="140" height="70" patternUnits="userSpaceOnUse">
+    <rect width="140" height="70" fill="#6b4a2b"/>
+    <rect y="18" width="140" height="1.5" fill="#7d5a36" opacity="0.55"/>
+    <rect y="42" width="140" height="1.5" fill="#7d5a36" opacity="0.45"/>
+    <ellipse cx="34" cy="30" rx="24" ry="8" fill="#5f4126" opacity="0.4"/>
+    <ellipse cx="104" cy="54" rx="20" ry="6" fill="#7d5a36" opacity="0.35"/>
+  </pattern>
+  <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#3a2010" flood-opacity="0.28"/>
+  </filter>
+  <clipPath id="cardClip"><rect x="0" y="0" width="240" height="300" rx="16"/></clipPath>
+  <path id="star" d="M0,-10 L2.25,-3.09 L9.51,-3.09 L3.63,1.18 L5.88,8.09 L0,3.82 L-5.88,8.09 L-3.63,1.18 L-9.51,-3.09 L-2.25,-3.09 Z"/>
+</defs>
+<rect x="0" y="0" width="1200" height="2680" fill="#f2ede1"/>
+<rect x="0" y="0" width="1200" height="240" fill="url(#headerGrad)"/>
+<use href="#star" transform="translate(600,40) scale(1.2)" fill="#f2d98a"/>
+<text x="600" y="84" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="bold" fill="#fff7ec">Дети войны</text>
+<text x="600" y="120" text-anchor="middle" font-size="16" fill="#f0dcc9">Белорусские пионеры в тылу и на фронте</text>
+<use href="#star" transform="translate(452,148) scale(0.55)" fill="#f2d98a"/>
+<text x="466" y="153" font-size="13" fill="#f0e6d0">Архив пополняется: материалы оцифровываются</text>
+<text x="600" y="196" text-anchor="middle" font-size="15" font-weight="bold" fill="#f4e9d6">О проекте     Разделы     Хроника     Новости     Архив</text>
+<rect x="0" y="210" width="1200" height="2" fill="#c8202a"/>
+<rect x="0" y="212" width="1200" height="28" fill="#123f1f"/>
+<text x="600" y="231" text-anchor="middle" font-size="12" fill="#e9e3cf">лента-заглушка • текст-заглушка • мы помним каждого • пионеры и партизаны</text>
+<rect x="150" y="262" width="900" height="292" rx="12" fill="url(#heroGrad)"/>
+<use href="#star" transform="translate(600,300) scale(0.5)" fill="#f2d98a"/>
+<text x="600" y="322" text-anchor="middle" font-size="14" letter-spacing="1" fill="#8a8f7a">кикер-заглушка · 1941 — 1945</text>
+<text x="600" y="352" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="bold" fill="#fff7ec">Заголовок героя (заглушка)</text>
+<text x="600" y="384" text-anchor="middle" font-size="16" fill="#8a8f7a">Текст-заглушка: краткое описание блока.</text>
+<text x="600" y="406" text-anchor="middle" font-size="16" fill="#8a8f7a">Вторая строка текста-заглушки.</text>
+<rect x="412" y="438" width="180" height="42" rx="21" fill="#a5141b"/>
+<text x="502" y="464" text-anchor="middle" font-size="15" fill="#ffffff">Смотреть разделы</text>
+<rect x="608" y="438" width="180" height="42" rx="21" fill="none" stroke="#f2ede1" stroke-width="2"/>
+<text x="698" y="464" text-anchor="middle" font-size="15" fill="#ffffff">Музейный архив</text>
+<text x="600" y="528" text-anchor="middle" font-size="12" fill="#8a8f7a">примечание-заглушка о ховере кнопок</text>
+<use href="#star" transform="translate(138,590) scale(0.7)" fill="#c8202a"/><text x="150" y="592" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="bold" fill="#8e1218">О проекте</text>
+<text x="150" y="624" font-size="16" fill="#8a8f7a">Текст-заглушка: описание проекта.</text><text x="150" y="646" font-size="16" fill="#8a8f7a">Текст-заглушка: вторая строка описания проекта.</text>
+<use href="#star" transform="translate(138,686) scale(0.7)" fill="#c8202a"/><text x="150" y="688" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="bold" fill="#8e1218">Основные положения по теме</text>
+<text x="150" y="718" font-size="16" fill="#8a8f7a">Текст-заглушка: вступление к разделу.</text><use href="#star" transform="translate(160,739) scale(0.35)" fill="#c8202a"/><text x="176" y="744" font-size="15" fill="#8a8f7a">Пункт-заглушка 1</text><use href="#star" transform="translate(160,765) scale(0.35)" fill="#c8202a"/><text x="176" y="770" font-size="15" fill="#8a8f7a">Пункт-заглушка 2</text><use href="#star" transform="translate(160,791) scale(0.35)" fill="#c8202a"/><text x="176" y="796" font-size="15" fill="#8a8f7a">Пункт-заглушка 3</text><use href="#star" transform="translate(160,817) scale(0.35)" fill="#c8202a"/><text x="176" y="822" font-size="15" fill="#8a8f7a">Пункт-заглушка 4</text><use href="#star" transform="translate(160,843) scale(0.35)" fill="#c8202a"/><text x="176" y="848" font-size="15" fill="#8a8f7a">Пункт-заглушка 5</text>
+<rect x="760" y="706" width="290" height="200" fill="#eef2e6" stroke="#cdd6c4"/>
+<rect x="760" y="706" width="4" height="200" fill="#a5141b"/>
+<text x="790" y="736" font-size="16" font-weight="bold" fill="#8e1218">Источники</text>
+<g font-size="14" fill="#1c6e37"><text x="790" y="770">Источник-заглушка 1</text><text x="790" y="798">Источник-заглушка 2</text><text x="790" y="826">Источник-заглушка 3</text></g>
+<use href="#star" transform="translate(138,948) scale(0.7)" fill="#c8202a"/><text x="150" y="950" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="bold" fill="#8e1218">Разделы</text>
+
+<g transform="translate(210,980)">
+  <rect x="0" y="0" width="240" height="300" rx="16" fill="url(#cardGrad)" stroke="#cfd6c8" filter="url(#softShadow)"/>
+  <clipPath id="cc0"><rect x="0" y="0" width="240" height="300" rx="16"/></clipPath>
+  <g clip-path="url(#cc0)"><rect x="0" y="0" width="240" height="140" fill="#c9cfbb"/></g>
+  <text x="14" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="bold" fill="#8e1218">Заголовок 1</text>
+  <text x="14" y="196" font-size="12.5" fill="#8a8f7a">Текст-заглушка</text>
+  <text x="14" y="214" font-size="12.5" fill="#8a8f7a">текст-заглушка карточки</text>
+  <rect x="14" y="244" width="95" height="30" rx="15" fill="#a5141b"/>
+  <text x="61.5" y="264" text-anchor="middle" font-size="12" fill="#ffffff">Подробнее</text>
+</g>
+<g transform="translate(480,980)">
+  <rect x="0" y="0" width="240" height="300" rx="16" fill="url(#radialCard)" stroke="#1a5c30" filter="url(#softShadow)"/>
+  <clipPath id="cc1"><rect x="0" y="0" width="240" height="300" rx="16"/></clipPath>
+  <g clip-path="url(#cc1)"><rect x="0" y="0" width="240" height="140" fill="#3f4a3a"/></g>
+  <text x="14" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="bold" fill="#ffffff">Заголовок 2</text>
+  <text x="14" y="196" font-size="12.5" fill="#dff0e2">Текст-заглушка</text>
+  <text x="14" y="214" font-size="12.5" fill="#dff0e2">текст-заглушка карточки</text>
+  <rect x="14" y="244" width="95" height="30" rx="15" fill="#a5141b"/>
+  <text x="61.5" y="264" text-anchor="middle" font-size="12" fill="#ffffff">Подробнее</text>
+</g>
+<g transform="translate(750,980)">
+  <rect x="0" y="0" width="240" height="300" rx="16" fill="url(#cardGrad)" stroke="#cfd6c8" filter="url(#softShadow)"/>
+  <clipPath id="cc2"><rect x="0" y="0" width="240" height="300" rx="16"/></clipPath>
+  <g clip-path="url(#cc2)"><rect x="0" y="0" width="240" height="140" fill="#c9cfbb"/></g>
+  <text x="14" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="bold" fill="#8e1218">Заголовок 3</text>
+  <text x="14" y="196" font-size="12.5" fill="#8a8f7a">Текст-заглушка</text>
+  <text x="14" y="214" font-size="12.5" fill="#8a8f7a">текст-заглушка карточки</text>
+  <rect x="14" y="244" width="95" height="30" rx="15" fill="#a5141b"/>
+  <text x="61.5" y="264" text-anchor="middle" font-size="12" fill="#ffffff">Подробнее</text>
+</g>
+<g transform="translate(480,1310)">
+  <rect x="0" y="0" width="240" height="300" rx="16" fill="url(#cardGrad)" stroke="#cfd6c8" filter="url(#softShadow)"/>
+  <clipPath id="cc3"><rect x="0" y="0" width="240" height="300" rx="16"/></clipPath>
+  <g clip-path="url(#cc3)"><rect x="0" y="0" width="240" height="140" fill="#c9cfbb"/></g>
+  <text x="14" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="bold" fill="#8e1218">Заголовок 4</text>
+  <text x="14" y="196" font-size="12.5" fill="#8a8f7a">Текст-заглушка</text>
+  <text x="14" y="214" font-size="12.5" fill="#8a8f7a">текст-заглушка карточки</text>
+  <rect x="14" y="244" width="95" height="30" rx="15" fill="#a5141b"/>
+  <text x="61.5" y="264" text-anchor="middle" font-size="12" fill="#ffffff">Подробнее</text>
+</g>
+<use href="#star" transform="translate(138,1652) scale(0.7)" fill="#c8202a"/><text x="150" y="1654" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="bold" fill="#8e1218">Хроника военных лет</text>
+<use href="#star" transform="translate(160,1679) scale(0.35)" fill="#c8202a"/><text x="176" y="1684" font-size="15" fill="#8a8f7a">Дата-заглушка 1 — событие-заглушка</text><use href="#star" transform="translate(160,1705) scale(0.35)" fill="#c8202a"/><text x="176" y="1710" font-size="15" fill="#8a8f7a">Дата-заглушка 2 — событие-заглушка</text><use href="#star" transform="translate(160,1731) scale(0.35)" fill="#c8202a"/><text x="176" y="1736" font-size="15" fill="#8a8f7a">Дата-заглушка 3 — событие-заглушка</text><use href="#star" transform="translate(160,1757) scale(0.35)" fill="#c8202a"/><text x="176" y="1762" font-size="15" fill="#8a8f7a">Дата-заглушка 4 — событие-заглушка</text><use href="#star" transform="translate(160,1783) scale(0.35)" fill="#c8202a"/><text x="176" y="1788" font-size="15" fill="#8a8f7a">Дата-заглушка 5 — событие-заглушка</text>
+<use href="#star" transform="translate(138,1842) scale(0.7)" fill="#c8202a"/><text x="150" y="1844" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="bold" fill="#8e1218">Новости и анонсы</text>
+
+<rect x="150" y="1874" width="900" height="90" fill="#ffffff" stroke="#e3ddc9"/>
+<rect x="150" y="1874" width="4" height="90" fill="#a5141b"/>
+<text x="176" y="1898" font-size="13" font-weight="bold" fill="#a5141b">Дата-заглушка 1</text>
+<text x="176" y="1922" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="bold" fill="#8e1218">Заголовок-заглушка новости 1</text>
+<text x="176" y="1944" font-size="14" fill="#8a8f7a">Текст-заглушка анонса</text>
+<text x="176" y="1960" font-size="14" fill="#1c6e37" text-decoration="underline">Подробнее</text>
+<rect x="150" y="1978" width="900" height="90" fill="#ffffff" stroke="#e3ddc9"/>
+<rect x="150" y="1978" width="4" height="90" fill="#a5141b"/>
+<text x="176" y="2002" font-size="13" font-weight="bold" fill="#a5141b">Дата-заглушка 2</text>
+<text x="176" y="2026" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="bold" fill="#8e1218">Заголовок-заглушка новости 2</text>
+<text x="176" y="2048" font-size="14" fill="#8a8f7a">Текст-заглушка анонса</text>
+<text x="176" y="2064" font-size="14" fill="#1c6e37" text-decoration="underline">Подробнее</text>
+<rect x="150" y="2082" width="900" height="90" fill="#ffffff" stroke="#e3ddc9"/>
+<rect x="150" y="2082" width="4" height="90" fill="#a5141b"/>
+<text x="176" y="2106" font-size="13" font-weight="bold" fill="#a5141b">Дата-заглушка 3</text>
+<text x="176" y="2130" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="bold" fill="#8e1218">Заголовок-заглушка новости 3</text>
+<text x="176" y="2152" font-size="14" fill="#8a8f7a">Текст-заглушка анонса</text>
+<text x="176" y="2168" font-size="14" fill="#1c6e37" text-decoration="underline">Подробнее</text>
+<rect x="150" y="2186" width="900" height="90" fill="#ffffff" stroke="#e3ddc9"/>
+<rect x="150" y="2186" width="4" height="90" fill="#a5141b"/>
+<text x="176" y="2210" font-size="13" font-weight="bold" fill="#a5141b">Дата-заглушка 4</text>
+<text x="176" y="2234" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="bold" fill="#8e1218">Заголовок-заглушка новости 4</text>
+<text x="176" y="2256" font-size="14" fill="#8a8f7a">Текст-заглушка анонса</text>
+<text x="176" y="2272" font-size="14" fill="#1c6e37" text-decoration="underline">Подробнее</text>
+<use href="#star" transform="translate(138,2340) scale(0.7)" fill="#c8202a"/><text x="150" y="2342" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="bold" fill="#8e1218">Музейный архив</text>
+<text x="150" y="2374" font-size="16" fill="#8a8f7a">Текст-заглушка: описание архивного раздела.</text><text x="150" y="2396" font-size="16" fill="#8a8f7a">Текст-заглушка: вторая строка.</text>
+<rect x="0" y="2444" width="1200" height="2" fill="#c8202a"/>
+<rect x="0" y="2446" width="1200" height="234" fill="url(#wood)"/>
+<text x="150" y="2484" font-size="16" font-weight="bold" fill="#f2d98a">Навигация</text>
+<g font-size="14" fill="#f2e6cf"><text x="150" y="2514">Ссылка-заглушка 1</text><text x="150" y="2536">Ссылка-заглушка 2</text><text x="150" y="2558">Ссылка-заглушка 3</text><text x="150" y="2580">Ссылка-заглушка 4</text></g>
+<text x="380" y="2484" font-size="16" font-weight="bold" fill="#f2d98a">Контакты учебного заведения</text>
+<g font-size="14" fill="#f2e6cf"><text x="380" y="2514">Адрес-заглушка</text><text x="380" y="2536">Телефон-заглушка</text><text x="380" y="2558">Почта-заглушка</text></g>
+<text x="680" y="2484" font-size="16" font-weight="bold" fill="#f2d98a">Источники по теме</text>
+<g font-size="14" fill="#f2e6cf"><text x="680" y="2514">Источник-заглушка 1</text><text x="680" y="2536">Источник-заглушка 2</text><text x="680" y="2558">Источник-заглушка 3</text></g>
+<text x="600" y="2620" text-anchor="middle" font-size="14" fill="#f2e6cf">© 2026 «Дети войны» · текст-заглушка</text>
+<use href="#star" transform="translate(488,2648) scale(0.5)" fill="#f2d98a"/>
+<text x="600" y="2653" text-anchor="middle" font-size="12" fill="#e8dcc4">Памяти детей Беларуси · 1941–1945</text>
+</svg>

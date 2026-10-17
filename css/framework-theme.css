@@ -1,0 +1,145 @@
+/* framework-theme.css — настройка темы Bootstrap под фирменную палитру проекта
+   (Занятие 8, задание 4). Подключается ПОСЛЕ bootstrap.min.css. */
+
+:root {
+  /* основные цвета — фирменная палитра проекта */
+  --bs-primary: #8e1218;
+  --bs-primary-rgb: 142, 18, 24;
+  --bs-secondary: #1c6e37;
+  --bs-secondary-rgb: 28, 110, 55;
+  --bs-success: #1c6e37;
+  --bs-success-rgb: 28, 110, 55;
+  --bs-danger: #a5141b;
+  --bs-danger-rgb: 165, 20, 27;
+  --bs-warning: #9a7415;
+  --bs-warning-rgb: 154, 116, 21;
+
+  /* типографика */
+  --bs-body-font-family: Arial, Helvetica, sans-serif;
+  --bs-body-font-size: 1rem;
+  --bs-body-line-height: 1.6;
+  --bs-heading-color: #8e1218;
+
+  /* текст и фон */
+  --bs-body-color: #262626;
+  --bs-body-color-rgb: 38, 38, 38;
+  --bs-body-bg: #f2ede1;
+  --bs-body-bg-rgb: 242, 237, 225;
+  --bs-secondary-color: #45402f;
+  --bs-emphasis-color: #8e1218;
+  --bs-tertiary-bg: #eef2e6;
+  --bs-secondary-bg: #eef2e6;
+
+  /* ссылки */
+  --bs-link-color: #1c6e37;
+  --bs-link-color-rgb: 28, 110, 55;
+  --bs-link-hover-color: #8e1218;
+  --bs-link-hover-color-rgb: 142, 18, 24;
+
+  /* рамки, радиусы скругления, тени */
+  --bs-border-color: #cfd6c8;
+  --bs-border-radius: 12px;
+  --bs-border-radius-sm: 8px;
+  --bs-border-radius-lg: 16px;
+  --bs-border-radius-xl: 20px;
+  --bs-border-radius-pill: 18px;
+  --bs-box-shadow: 0 4px 12px rgba(58, 16, 8, 0.12);
+  --bs-box-shadow-sm: 0 2px 6px rgba(58, 16, 8, 0.10);
+  --bs-box-shadow-lg: 0 8px 20px rgba(58, 16, 8, 0.18);
+  --bs-focus-ring-color: rgba(28, 110, 55, 0.35);
+
+  /* компонент «карточка» */
+  --bs-card-bg: #ffffff;
+  --bs-card-border-color: #cfd6c8;
+  --bs-card-border-radius: 16px;
+  --bs-card-cap-bg: #eef2e6;
+  --bs-card-color: #262626;
+
+  /* компонент «таблица» */
+  --bs-table-bg: #ffffff;
+  --bs-table-color: #262626;
+  --bs-table-border-color: #cfd6c8;
+  --bs-table-striped-bg: #f6f3ea;
+  --bs-table-striped-color: #262626;
+  --bs-table-hover-bg: #eef2e6;
+  --bs-table-hover-color: #262626;
+}
+
+/* Кнопки: варианты Bootstrap хранят цвета в собственных переменных,
+   поэтому переопределяем их для фирменных оттенков */
+.btn-primary {
+  --bs-btn-bg: #8e1218;
+  --bs-btn-border-color: #8e1218;
+  --bs-btn-hover-bg: #a5141b;
+  --bs-btn-hover-border-color: #a5141b;
+  --bs-btn-active-bg: #7a0f14;
+  --bs-btn-active-border-color: #7a0f14;
+  --bs-btn-disabled-bg: #8e1218;
+  --bs-btn-disabled-border-color: #8e1218;
+}
+
+.btn-secondary {
+  --bs-btn-bg: #1c6e37;
+  --bs-btn-border-color: #1c6e37;
+  --bs-btn-hover-bg: #175c2e;
+  --bs-btn-hover-border-color: #175c2e;
+  --bs-btn-active-bg: #134d27;
+  --bs-btn-active-border-color: #134d27;
+  --bs-btn-disabled-bg: #1c6e37;
+  --bs-btn-disabled-border-color: #1c6e37;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #8e1218;
+  --bs-btn-border-color: #8e1218;
+  --bs-btn-hover-bg: #8e1218;
+  --bs-btn-hover-border-color: #8e1218;
+  --bs-btn-active-bg: #7a0f14;
+  --bs-btn-active-border-color: #7a0f14;
+  --bs-btn-disabled-color: #8e1218;
+  --bs-btn-disabled-border-color: #8e1218;
+}
+
+/* постраничная навигация */
+.page-link {
+  --bs-pagination-color: #8e1218;
+  --bs-pagination-hover-color: #ffffff;
+  --bs-pagination-hover-bg: #8e1218;
+  --bs-pagination-hover-border-color: #8e1218;
+  --bs-pagination-active-bg: #8e1218;
+  --bs-pagination-active-border-color: #8e1218;
+  --bs-pagination-focus-color: #8e1218;
+  --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(28, 110, 55, 0.35);
+}
+
+/* поля формы: цвет фокуса под палитру */
+.form-control:focus,
+.form-select:focus {
+  border-color: #1c6e37;
+  box-shadow: 0 0 0 0.25rem rgba(28, 110, 55, 0.25);
+}
+
+/* Тёмная тема Bootstrap (атрибут data-bs-theme) — тёмная палитра проекта */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #1b1b1f;
+  --bs-body-color: #e9e7e2;
+  --bs-body-color-rgb: 233, 231, 226;
+  --bs-body-bg-rgb: 27, 27, 31;
+  --bs-secondary-color: #cdc9be;
+  --bs-emphasis-color: #f0a6a6;
+  --bs-heading-color: #f0a6a6;
+  --bs-tertiary-bg: #303036;
+  --bs-secondary-bg: #303036;
+  --bs-border-color: #3b3b43;
+  --bs-link-color: #83cf90;
+  --bs-link-hover-color: #f0a6a6;
+  --bs-card-bg: #26262b;
+  --bs-card-border-color: #3b3b43;
+  --bs-table-bg: #26262b;
+  --bs-table-color: #e9e7e2;
+  --bs-table-border-color: #3b3b43;
+  --bs-table-striped-bg: #2a2a30;
+  --bs-table-striped-color: #e9e7e2;
+  --bs-table-hover-bg: #303036;
+  --bs-table-hover-color: #e9e7e2;
+}

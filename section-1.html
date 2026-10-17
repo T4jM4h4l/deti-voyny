@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Судьбы детей — Дети войны</title>
+  <!-- фреймворк подключается перед стилями проекта: правила проекта перекрывают его -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- слой совместимости: гасит конфликты Reboot и компонентов фреймворка -->
+  <link rel="stylesheet" href="css/framework-compat.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/jquery-ui-theme.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <!-- адаптивные страницы на сетке фреймворка (Занятие 9) -->
+  <link rel="stylesheet" href="css/grid-pages.css">
+  <script src="js/jquery-3.7.1.min.js" defer></script>
+  <script src="js/jquery-ui.min.js" defer></script>
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<header>
+  <!-- логотип и название портала -->
+  <div class="brand">
+    <img class="logo" src="assets/img/logo.svg" alt="">
+    <p class="brand-name">Дети войны</p>
+    <p>Белорусские пионеры в тылу и на фронте</p>
+  </div>
+
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">Тёмная тема</button>
+
+  <p class="status"><img class="star" src="assets/img/logo.svg" alt=""> Архив пополняется: материалы оцифровываются</p>
+
+  <!-- бегущая строка (два одинаковых блока — для бесшовного повтора) -->
+  <div class="ticker">
+    <div class="ticker-set">
+      <span>22 июня 1941 — 9 мая 1945</span>
+      <span>Мы помним каждого</span>
+      <span>Судьбы детей Беларуси</span>
+      <span>Пионеры и партизаны</span>
+      <span>Музейные архивы</span>
+    </div>
+    <div class="ticker-set" aria-hidden="true">
+      <span>22 июня 1941 — 9 мая 1945</span>
+      <span>Мы помним каждого</span>
+      <span>Судьбы детей Беларуси</span>
+      <span>Пионеры и партизаны</span>
+      <span>Музейные архивы</span>
+    </div>
+  </div>
+</header>
+
+<nav class="navbar navbar-expand-lg topnav-portal" aria-label="Основная навигация">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img class="logo" src="assets/img/logo.svg" alt="">
+      <span>Дети войны</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Переключить навигацию">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html#about">О проекте</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#cards">Разделы</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#history">Хроника</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#archive">Музейный архив</a></li>
+        <li class="nav-item"><a class="nav-link" href="checklist.html">Чек-лист</a></li>
+        <li class="nav-item"><a class="nav-link" href="registry.html">Каталог записей</a></li>
+        <li class="nav-item"><a class="nav-link" href="knowledge.html">Проверка знаний</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-4" id="main">
+
+  <!-- хлебные крошки -->
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <ol>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="section-1.html" aria-current="page">Раздел 1. Судьбы детей</a></li>
+      <li><a href="section-2.html">Раздел 2. Пионеры и партизаны</a></li>
+      <li><a href="section-3.html">Раздел 3. Тыл: труд и лишения</a></li>
+      <li><a href="section-4.html">Раздел 4. Музейный архив</a></li>
+    </ol>
+  </nav>
+
+  <div class="row g-4">
+
+    <!-- основной контент: на мобильном идёт первым, на широком — справа -->
+    <div class="col-12 col-lg-9 order-1 order-lg-2">
+      <div class="page__main">
+
+        <h1>Судьбы детей Беларуси в годы войны</h1>
+
+        <p class="text-body-secondary">
+          Для белорусских мальчиков и девочек война началась 22 июня 1941 года.
+          Детство оборвалось в один день: вместо школы, игр и летних каникул
+          пришли тревога, разлука и ожидание писем с фронта. Ниже — ключевые
+          эпизоды, через которые прошли дети войны.
+        </p>
+
+        <!-- карточки требований в три колонки: 1 / 2 / 3 колонки -->
+        <div class="row g-3 grid-row">
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="w-100 p-3 bg-body border rounded-3 shadow-sm">
+              <h3 class="h5 mb-2">Детство, прерванное войной</h3>
+              <p class="mb-0 text-body-secondary">
+                Война началась 22 июня 1941 года и оборвала детство в один день.
+                Многие дети так и не успели попрощаться с родными.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="w-100 p-3 bg-body border rounded-3 shadow-sm">
+              <h3 class="h5 mb-2">Эвакуация и оккупация</h3>
+              <p class="mb-0 text-body-secondary">
+                Летом 1941 года детей вывозили в тыл, и семьи нередко теряли
+                друг друга. На оккупированной территории дети голодали и
+                работали наравне со взрослыми.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="w-100 p-3 bg-body border rounded-3 shadow-sm">
+              <h3 class="h5 mb-2">Послевоенное детство</h3>
+              <p class="mb-0 text-body-secondary">
+                После освобождения Беларуси дети возвращались домой и в школы.
+                Кто-то нашёл семью, кто-то остался сиротой; память о пережитом
+                они пронесли через всю жизнь.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!-- врезка-предупреждение (утилиты цвета, рамки и скругления) -->
+        <aside class="my-4 p-3 bg-body-tertiary border-start border-4 border-danger rounded-end-3 shadow-sm" aria-labelledby="notice-remember">
+          <h3 class="h5 text-danger mb-2" id="notice-remember">Помните</h3>
+          <p class="mb-0 text-body-secondary">
+            Война не щадила детей: они гибли от голода и болезней, теряли родных,
+            проходили через эвакуацию и оккупацию. За каждой страницей этого
+            раздела — настоящая детская судьба, и память о ней обращена
+            к каждому из нас.
+          </p>
+        </aside>
+
+        <!-- кнопка, открывающая модальное окно с пояснением по теме -->
+        <p class="mt-4"><button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#section-modal">Пояснение к разделу</button></p>
+
+        <!-- таблица справочных данных: адаптивная обёртка и утилиты таблиц -->
+        <div class="table-responsive">
+          <table class="data-table table-hover align-middle">
+            <caption>Таблица 1.1 — Категории детей и их судьбы</caption>
+            <thead>
+              <tr>
+                <th scope="col">Категория детей</th>
+                <th scope="col">Что довелось пережить</th>
+                <th scope="col" class="d-none d-md-table-cell">Период</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Эвакуированные</td>
+                <td>Переезд в тыл, жизнь вдали от дома</td>
+                <td class="d-none d-md-table-cell">1941–1942</td>
+              </tr>
+              <tr>
+                <td>Дети на оккупированной территории</td>
+                <td>Голод, страх, принудительный труд</td>
+                <td class="d-none d-md-table-cell">1941–1944</td>
+              </tr>
+              <tr>
+                <td>Дети-сироты</td>
+                <td>Потеря родителей, жизнь в детских домах</td>
+                <td class="d-none d-md-table-cell">1941–1945</td>
+              </tr>
+              <tr>
+                <td>Дети в тылу</td>
+                <td>Работа на заводах и в колхозах, учёба</td>
+                <td class="d-none d-md-table-cell">1941–1945</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- адаптивная форма на классах фреймворка -->
+        <form class="my-4 p-3 bg-body border rounded-3 shadow-sm" action="#">
+          <h2 class="h4">Поиск сведений о родственнике</h2>
+          <p class="text-body-secondary">Заполните известные данные — мы поможем найти сведения в архивах.</p>
+
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <label class="form-label" for="search-name">Фамилия и имя</label>
+              <input class="form-control" id="search-name" name="name" type="text" placeholder="Например: Казей Марат">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="form-label" for="search-year">Год рождения</label>
+              <input class="form-control" id="search-year" name="year" type="number" min="1900" max="1945" placeholder="1945">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="form-label" for="search-region">Регион поиска</label>
+              <input class="form-control" id="search-region" name="region" type="text" placeholder="Минская область">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="form-label" for="search-mail">Почта для ответа</label>
+              <input class="form-control" id="search-mail" name="mail" type="email" placeholder="name@example.by">
+            </div>
+          </div>
+
+          <div class="d-grid gap-2 d-sm-flex mt-3">
+            <button class="btn" type="submit">Отправить запрос</button>
+            <button class="btn" type="reset">Очистить</button>
+          </div>
+        </form>
+
+        <!-- модальное окно: пояснение по теме раздела -->
+        <div class="modal fade" id="section-modal" tabindex="-1" aria-labelledby="section-modal-title" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title h5" id="section-modal-title">Почему важно помнить о детях войны</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  Дети войны — особая страница истории Беларуси. Они не воевали,
+                  но наравне со взрослыми пережили эвакуацию, оккупацию, голод
+                  и потерю близких.
+                </p>
+                <p>
+                  Память о них помогает осознать цену мира и ответственность
+                  современного поколения за сохранение исторической правды.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn" data-bs-dismiss="modal">Понятно</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- боковая навигация раздела: на широком экране — слева -->
+    <aside class="col-12 col-lg-3 order-2 order-lg-1 page-aside" aria-label="Боковая панель">
+      <nav class="sidenav" aria-label="Разделы портала">
+        <p class="sidenav-title">Разделы</p>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="section-1.html" aria-current="page">Раздел 1. Судьбы детей</a></li>
+          <li><a href="section-2.html">Раздел 2. Пионеры и партизаны</a></li>
+          <li><a href="section-3.html">Раздел 3. Тыл: труд и лишения</a></li>
+          <li><a href="section-4.html">Раздел 4. Музейный архив</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3>Контакты учебного заведения</h3>
+      <ul>
+        <li>Адрес: г. Пинск, ул. Федотова, 36</li>
+        <li>Телефон: +375 29 292-92-92</li>
+        <li>Почта: otvet@pgktit.by</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Источники по теме</h3>
+      <ul>
+        <li><a href="https://warmuseum.by/" target="_blank" rel="noopener">Белорусский государственный музей истории ВОВ</a></li>
+        <li><a href="https://khatyn.by/" target="_blank" rel="noopener">Мемориальный комплекс «Хатынь»</a></li>
+        <li><a href="https://archives.gov.by/" target="_blank" rel="noopener">Национальный архив Республики Беларусь</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="footer-bottom">
+    © 2026 «Дети войны» · Учебная практика «Веб-программирование»
+  </p>
+</footer>
+
+</body>
+</html>

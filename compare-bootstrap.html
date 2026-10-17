@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сравнение: вёрстка на фреймворке — Дети войны</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/framework-theme.css">
+  <link rel="stylesheet" href="css/framework-page.css">
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<nav class="navbar navbar-expand-lg navbar-portal">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img class="brand-logo" src="assets/img/logo.svg" alt=""> Дети войны</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Переключить навигацию">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="compare-native.html">Собственная вёрстка</a></li>
+        <li class="nav-item"><a class="nav-link active" href="compare-bootstrap.html" aria-current="page">Вёрстка на фреймворке</a></li>
+        <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог (Bootstrap)</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-4">
+  <h1 class="mb-2">Каталог записей</h1>
+  <p class="text-secondary">Одна и та же страница, свёрстанная на сетке и компонентах фреймворка.</p>
+
+  <form class="row g-3 mb-4" role="search">
+    <div class="col-12 col-md-6 col-lg-4">
+      <label class="form-label" for="cmp-search">Поиск</label>
+      <input class="form-control" type="search" id="cmp-search" placeholder="Наименование, номер...">
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+      <label class="form-label" for="cmp-section">Раздел</label>
+      <select class="form-select" id="cmp-section">
+        <option>Все разделы</option>
+        <option>Судьбы детей</option>
+        <option>Пионеры и партизаны</option>
+      </select>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 d-flex align-items-end">
+      <button class="btn btn-outline-primary" type="button">Сбросить</button>
+    </div>
+  </form>
+
+  <div class="table-responsive mb-4">
+    <table class="table table-striped table-hover align-middle">
+      <caption>Записи каталога</caption>
+      <thead>
+        <tr>
+          <th scope="col">Наименование</th>
+          <th scope="col">Категория</th>
+          <th scope="col">Номер</th>
+          <th scope="col">Дата</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Письмо Анны Ковалёвой матери</td><td>Письмо</td><td>ФД-001</td><td>12.04.1943</td></tr>
+        <tr><td>Дневник Коли Руденко</td><td>Дневник</td><td>ФД-002</td><td>03.11.1942</td></tr>
+        <tr><td>Наградной лист юного разведчика Петра Гурина</td><td>Наградной лист</td><td>ФД-004</td><td>20.07.1944</td></tr>
+        <tr><td>Воспоминания Марии Лебедевой</td><td>Воспоминание</td><td>ФД-005</td><td>09.05.1985</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="h4 mb-3">Информация</h2>
+  <div class="row g-3">
+    <div class="col-12 col-md-4">
+      <div class="card h-100"><div class="card-body">
+        <h3 class="h6 card-title">Разделы</h3>
+        <p class="card-text text-secondary mb-0">Четыре тематических раздела каталога.</p>
+      </div></div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card h-100"><div class="card-body">
+        <h3 class="h6 card-title">Категории</h3>
+        <p class="card-text text-secondary mb-0">Восемь категорий архивных записей.</p>
+      </div></div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card h-100"><div class="card-body">
+        <h3 class="h6 card-title">Период</h3>
+        <p class="card-text text-secondary mb-0">Документы 1940–1985 годов.</p>
+      </div></div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer-portal mt-auto py-4">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-md-6">
+        <h3 class="h6">Контакты учебного заведения</h3>
+        <ul class="list-unstyled mb-0">
+          <li>Адрес: г. Пинск, ул. Федотова, 36</li>
+          <li>Телефон: +375 29 292-92-92</li>
+          <li>Почта: otvet@pgktit.by</li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6">
+        <h3 class="h6">Источники по теме</h3>
+        <ul class="list-unstyled mb-0">
+          <li><a href="https://warmuseum.by/" target="_blank" rel="noopener">Белорусский государственный музей истории ВОВ</a></li>
+          <li><a href="https://khatyn.by/" target="_blank" rel="noopener">Мемориальный комплекс «Хатынь»</a></li>
+          <li><a href="https://archives.gov.by/" target="_blank" rel="noopener">Национальный архив Республики Беларусь</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-center mb-0 mt-3">© 2026 «Дети войны» · Учебная практика «Веб-программирование»</p>
+  </div>
+</footer>
+
+</body>
+</html>

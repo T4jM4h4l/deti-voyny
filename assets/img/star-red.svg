@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <title>Звезда — маркер заголовков разделов</title>
+  <path d="M32,6 L37.88,23.91 L56.72,23.97 L41.51,35.09 L47.28,53.03 L32,42 L16.72,53.03 L22.49,35.09 L7.28,23.97 L26.12,23.91 Z"
+        fill="#c8202a" stroke="#8e1218" stroke-width="1" stroke-linejoin="round"/>
+</svg>

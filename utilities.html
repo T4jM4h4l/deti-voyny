@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Утилиты оформления (Bootstrap) — Дети войны</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/framework-theme.css">
+  <link rel="stylesheet" href="css/framework-page.css">
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<nav class="navbar navbar-expand-lg navbar-portal">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img class="brand-logo" src="assets/img/logo.svg" alt=""> Дети войны</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Переключить навигацию">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+        <li class="nav-item"><a class="nav-link" href="section-1.html">Раздел 1</a></li>
+        <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог (Bootstrap)</a></li>
+        <li class="nav-item"><a class="nav-link active" href="utilities.html" aria-current="page">Утилиты</a></li>
+        <li class="nav-item"><a class="nav-link" href="knowledge.html">Проверка знаний</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-4">
+
+  <nav aria-label="Хлебные крошки">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Утилиты оформления</li>
+    </ol>
+  </nav>
+
+  <h1 class="display-6 mb-2">Утилиты оформления фреймворка</h1>
+  <p class="lead text-body-secondary mb-5">
+    Страница-витрина: оформление выполнено только классами Bootstrap 5 —
+    типографика, отступы, цвета, рамки, состояния, таблицы и формы.
+  </p>
+
+  <!-- Задание 2. Типографика -->
+  <section class="mb-5">
+    <h2 class="h3 border-bottom pb-2 mb-4">Типографика</h2>
+
+    <p class="display-4 mb-1">display-4</p>
+    <p class="display-6 mb-3">display-6</p>
+
+    <p class="h1">Заголовок класса h1</p>
+    <p class="h4 text-body-secondary">Заголовок класса h4 (приглушённый)</p>
+
+    <p class="lead mb-2">Лид-абзац: выделяет вводный текст.</p>
+    <p class="mb-1">Обычный текст, <small class="text-body-secondary">уменьшенный через small</small>.</p>
+    <p class="fs-3 mb-1">Текст размера fs-3</p>
+    <p class="fw-bold mb-1">Жирный текст (fw-bold)</p>
+    <p class="fw-semibold fst-italic mb-1">Полужирный курсив (fw-semibold fst-italic)</p>
+    <p class="text-uppercase text-decoration-underline mb-1">Прописные с подчёркиванием</p>
+    <p class="text-body-secondary lh-lg mb-1">Приглушённый текст с увеличенным межстрочным интервалом (lh-lg).</p>
+    <p class="text-truncate mb-0 w-50">Очень длинная строка, которая обрезается классом text-truncate при нехватке ширины контейнера.</p>
+  </section>
+
+  <!-- Задание 3. Отступы -->
+  <section class="mb-5">
+    <h2 class="h3 border-bottom pb-2 mb-4">Отступы</h2>
+
+    <div class="row g-3">
+      <div class="col-12 col-md-6">
+        <div class="border rounded-3 bg-body-tertiary p-3">
+          <p class="mb-0">Внутренние отступы: <code>p-3</code>.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="border rounded-3 bg-body-tertiary px-5 py-2">
+          <p class="mb-0">Разные стороны: <code>px-5 py-2</code>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4 border rounded-3">
+      <p class="my-4 mx-auto w-75 text-center mb-0">Вертикальный ритм: <code>my-4</code>, ширина <code>w-75</code>, центрирование <code>mx-auto text-center</code>.</p>
+    </div>
+
+    <div class="d-flex gap-2 mt-4">
+      <span class="badge text-bg-primary">gap-2</span>
+      <span class="badge text-bg-success">равные промежутки</span>
+      <span class="badge text-bg-secondary">через d-flex</span>
+    </div>
+  </section>
+
+  <!-- Задание 4. Цвета и фон -->
+  <section class="mb-5">
+    <h2 class="h3 border-bottom pb-2 mb-4">Цвета и фон</h2>
+
+    <p class="text-primary mb-1">text-primary</p>
+    <p class="text-secondary mb-1">text-secondary</p>
+    <p class="text-success mb-1">text-success</p>
+    <p class="text-danger mb-1">text-danger</p>
+    <p class="text-warning mb-1">text-warning</p>
+    <p class="text-body-secondary mb-3">text-body-secondary</p>
+
+    <div class="row g-3">
+      <div class="col-6 col-md-3"><div class="p-3 text-bg-primary rounded-3">text-bg-primary</div></div>
+      <div class="col-6 col-md-3"><div class="p-3 text-bg-success rounded-3">text-bg-success</div></div>
+      <div class="col-6 col-md-3"><div class="p-3 text-bg-danger rounded-3">text-bg-danger</div></div>
+      <div class="col-6 col-md-3"><div class="p-3 text-bg-secondary rounded-3">text-bg-secondary</div></div>
+      <div class="col-6 col-md-3"><div class="p-3 bg-body-tertiary border rounded-3">bg-body-tertiary</div></div>
+      <div class="col-6 col-md-3"><div class="p-3 bg-primary bg-opacity-25 rounded-3">bg-primary bg-opacity-25</div></div>
+    </div>
+  </section>
+
+  <!-- Задание 5. Рамки и скругления -->
+  <section class="mb-5">
+    <h2 class="h3 border-bottom pb-2 mb-4">Рамки, скругления, тени</h2>
+
+    <div class="row g-3">
+      <div class="col-12 col-md-4"><div class="border rounded p-3 bg-body">border rounded</div></div>
+      <div class="col-12 col-md-4"><div class="border border-3 border-primary rounded-3 p-3 bg-body">border-3 border-primary rounded-3</div></div>
+      <div class="col-12 col-md-4"><div class="border border-danger rounded-pill p-3 bg-body">border-danger rounded-pill</div></div>
+      <div class="col-12 col-md-4"><div class="border-0 bg-body-tertiary rounded-5 p-3">rounded-5 (без рамки)</div></div>
+      <div class="col-12 col-md-4"><div class="border rounded-3 p-3 bg-body shadow">shadow</div></div>
+      <div class="col-12 col-md-4"><div class="border rounded-3 p-3 bg-body shadow-lg">shadow-lg</div></div>
+    </div>
+  </section>
+
+  <!-- Задание 6. Состояния -->
+  <section class="mb-5">
+    <h2 class="h3 border-bottom pb-2 mb-4">Состояния: наведение, фокус, активное</h2>
+
+    <p class="mb-2"><a href="#states" class="link-primary">Ссылка link-primary</a> · <a href="#states" class="link-success">link-success</a> · <a href="#states" class="link-secondary">link-secondary</a></p>
+
+    <div class="d-flex flex-wrap gap-2 mb-3">
+      <button type="button" class="btn btn-primary">Основная</button>
+      <button type="button" class="btn btn-outline-primary">Контурная</button>
+      <button type="button" class="btn btn-success">Успех</button>
+      <button type="button" class="btn btn-danger">Опасность</button>
+      <button type="button" class="btn btn-primary active" aria-pressed="true">Активная</button>
+      <button type="button" class="btn btn-primary" disabled>Отключена</button>
+    </div>
+
+    <p class="mb-2">Видимое состояние фокуса (навигация с клавиатуры — Tab):</p>
+    <div class="d-flex flex-wrap gap-2 mb-3">
+      <button type="button" class="btn btn-primary focus-ring">focus-ring</button>
+      <button type="button" class="btn btn-outline-success focus-ring">focus-ring</button>
+      <a href="#states" class="btn btn-link focus-ring">ссылка-кнопка</a>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0">
+        <caption>Строка таблицы реагирует на наведение (table-hover)</caption>
+        <thead>
+          <tr><th scope="col">Документ</th><th scope="col">Дата</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Письмо Анны Ковалёвой</td><td>1943</td></tr>
+          <tr><td>Дневник Коли Руденко</td><td>1942</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Задание 7. Таблицы -->
+  <section class="mb-5">
+    <h2 class="h3 border-bottom pb-2 mb-4">Таблицы</h2>
+
+    <div class="table-responsive mb-4">
+      <table class="table table-striped table-hover table-bordered align-middle">
+        <caption>table table-striped table-hover table-bordered align-middle</caption>
+        <thead class="table-dark">
+          <tr><th scope="col">№</th><th scope="col">Наименование</th><th scope="col">Категория</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ФД-001</td><td>Письмо Анны Ковалёвой</td><td>Письмо</td></tr>
+          <tr><td>ФД-002</td><td>Дневник Коли Руденко</td><td>Дневник</td></tr>
+          <tr><td>ФД-003</td><td>Фотография класса</td><td>Фотодокумент</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-sm table-borderless">
+        <caption>table table-sm table-borderless</caption>
+        <tbody>
+          <tr><td>Возраст начала работы</td><td>с 12–14 лет</td></tr>
+          <tr><td>Продолжительность смены</td><td>10–12 часов</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Задание 7. Формы -->
+  <section class="mb-5">
+    <h2 class="h3 border-bottom pb-2 mb-4">Формы</h2>
+
+    <form class="row g-3" action="#">
+      <div class="col-12 col-md-6">
+        <label class="form-label" for="u-name">Фамилия и имя</label>
+        <input type="text" class="form-control" id="u-name" placeholder="Казей Марат">
+      </div>
+      <div class="col-12 col-md-6">
+        <label class="form-label" for="u-section">Раздел</label>
+        <select class="form-select" id="u-section">
+          <option selected>Все разделы</option>
+          <option>Судьбы детей</option>
+          <option>Пионеры и партизаны</option>
+        </select>
+      </div>
+      <div class="col-12 col-md-6">
+        <label class="form-label" for="u-mail">Почта для ответа</label>
+        <input type="email" class="form-control" id="u-mail" placeholder="name@example.by">
+        <div class="form-text">Мы не передаём адрес третьим лицам.</div>
+      </div>
+      <div class="col-12 col-md-6">
+        <label class="form-label" for="u-year">Год рождения</label>
+        <input type="number" class="form-control is-invalid" id="u-year" value="1890">
+        <div class="invalid-feedback">Укажите год в диапазоне 1900–1945.</div>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="u-agree">
+          <label class="form-check-label" for="u-agree">Согласен на обработку данных</label>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-text" id="u-mail-add">@</span>
+          <input type="text" class="form-control" aria-label="Почта" aria-describedby="u-mail-add">
+          <button class="btn btn-primary" type="button">Найти</button>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="d-grid gap-2 d-sm-flex">
+          <button class="btn btn-primary" type="submit">Отправить запрос</button>
+          <button class="btn btn-outline-secondary" type="reset">Очистить</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+</main>
+
+<footer class="footer-portal mt-auto py-4">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-md-6">
+        <h3 class="h6">Контакты учебного заведения</h3>
+        <ul class="list-unstyled mb-0">
+          <li>Адрес: г. Пинск, ул. Федотова, 36</li>
+          <li>Телефон: +375 29 292-92-92</li>
+          <li>Почта: otvet@pgktit.by</li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6">
+        <h3 class="h6">Источники по теме</h3>
+        <ul class="list-unstyled mb-0">
+          <li><a href="https://warmuseum.by/" target="_blank" rel="noopener">Белорусский государственный музей истории ВОВ</a></li>
+          <li><a href="https://khatyn.by/" target="_blank" rel="noopener">Мемориальный комплекс «Хатынь»</a></li>
+          <li><a href="https://archives.gov.by/" target="_blank" rel="noopener">Национальный архив Республики Беларусь</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-center mb-0 mt-3">© 2026 «Дети войны» · Учебная практика «Веб-программирование»</p>
+  </div>
+</footer>
+
+</body>
+</html>

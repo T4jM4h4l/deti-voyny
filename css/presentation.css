@@ -1,0 +1,356 @@
+/* presentation.css — слайдовая презентация проекта «Дети войны» (Занятие 12, Задание 8) */
+
+:root {
+  --p-bg: #f2ede1;
+  --p-surface: #ffffff;
+  --p-text: #262626;
+  --p-muted: #6b6250;
+  --p-heading: #8e1218;
+  --p-link: #1c6e37;
+  --p-accent: #a5141b;
+  --p-border: #cfd6c8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--p-text);
+  background: var(--p-bg);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 2000;
+  padding: 10px 18px;
+  color: #ffffff;
+  background: #8e1218;
+  border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* ---------------------------------------------------------------- каркас */
+.deck {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.slide {
+  display: none;
+  position: absolute;
+  inset: 0;
+  padding: 72px 96px;
+  overflow-y: auto;
+  background: linear-gradient(180deg, #ffffff, #f7f2e6);
+}
+
+.slide.is-active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide__inner {
+  width: 100%;
+  max-width: 1120px;
+}
+
+.slide--center .slide__inner {
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.slide--split .slide__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 56px;
+  align-items: center;
+}
+
+/* ---------------------------------------------------------------- верхняя полоса прогресса */
+.deck-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(142, 18, 24, 0.15);
+  z-index: 50;
+}
+
+.deck-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #8e1218, #1c6e37);
+}
+
+/* ---------------------------------------------------------------- заголовки и текст */
+.slide h2 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  color: var(--p-heading);
+}
+
+.slide--center h2 {
+  justify-content: center;
+}
+
+.slide h2::before {
+  content: "";
+  flex: none;
+  width: 30px;
+  height: 30px;
+  background: url("../assets/img/star-red.svg") center / contain no-repeat;
+}
+
+.points {
+  list-style: none;
+}
+
+.points li {
+  position: relative;
+  margin-bottom: 14px;
+  padding: 16px 22px 16px 56px;
+  font-size: 21px;
+  line-height: 1.4;
+  background: #ffffff;
+  border-left: 5px solid var(--p-accent);
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(58, 16, 8, 0.08);
+}
+
+.slide--center .points {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.points li::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 22px;
+  width: 16px;
+  height: 16px;
+  background: var(--p-accent);
+  border-radius: 50%;
+}
+
+/* ---------------------------------------------------------------- иллюстрации */
+.slide__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  border: 8px solid #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 22px 46px rgba(58, 16, 8, 0.28);
+  transform: rotate(-1.5deg);
+}
+
+/* ---------------------------------------------------------------- титульный слайд */
+.slide--title {
+  background: linear-gradient(135deg, #7a1218, #a6291f 48%, #1c6e37);
+}
+
+.slide--title .slide__inner {
+  text-align: center;
+  color: #ffffff;
+}
+
+.slide--title .title-logo {
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 22px;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
+}
+
+.slide--title h1 {
+  margin-bottom: 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 64px;
+  color: #ffffff;
+}
+
+.slide--title .subtitle {
+  margin-bottom: 8px;
+  font-size: 28px;
+  color: #f6e7c4;
+}
+
+.slide--title .lead {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.slide--title .slide__author {
+  margin-top: 44px;
+  font-size: 21px;
+  color: #f4e9d6;
+}
+
+.slide--title .hint {
+  margin-top: 28px;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---------------------------------------------------------------- числовые показатели */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.stat {
+  min-width: 210px;
+  padding: 28px 26px;
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-top: 6px solid var(--p-heading);
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(58, 16, 8, 0.12);
+}
+
+.stat__num {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 52px;
+  line-height: 1;
+  color: var(--p-accent);
+}
+
+.stat__label {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+  color: var(--p-muted);
+}
+
+/* ---------------------------------------------------------------- значки (кроссбраузерность, оптимизация) */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.badge {
+  padding: 18px 26px;
+  font-size: 19px;
+  color: var(--p-heading);
+  background: #ffffff;
+  border: 2px solid var(--p-border);
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(58, 16, 8, 0.1);
+}
+
+.badge strong {
+  color: var(--p-accent);
+}
+
+/* ---------------------------------------------------------------- структура проекта */
+.tree {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  list-style: none;
+  text-align: left;
+}
+
+.tree li {
+  padding: 16px 20px;
+  font-size: 19px;
+  background: #ffffff;
+  border-left: 5px solid var(--p-link);
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(58, 16, 8, 0.08);
+}
+
+.tree b {
+  color: var(--p-link);
+}
+
+/* ---------------------------------------------------------------- адаптивность */
+@media (max-width: 900px) {
+  .slide {
+    padding: 40px 26px;
+  }
+
+  .slide--split .slide__inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .slide__media {
+    order: -1;
+  }
+
+  .slide h2 {
+    font-size: 30px;
+  }
+
+  .points li {
+    font-size: 18px;
+  }
+
+  .slide--title h1 {
+    font-size: 38px;
+  }
+
+  .tree {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------------------------------------------------------- печать */
+@media print {
+  .deck {
+    height: auto;
+    overflow: visible;
+    cursor: auto;
+  }
+
+  .slide {
+    display: block;
+    position: static;
+    min-height: 0;
+    padding: 24px 0;
+    page-break-after: always;
+    background: #ffffff;
+  }
+
+  .deck-progress {
+    display: none;
+  }
+
+  .points li,
+  .stat,
+  .badge,
+  .tree li {
+    box-shadow: none;
+  }
+
+  .points li {
+    font-size: 13pt;
+  }
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тыл: труд и лишения — Дети войны</title>
+  <!-- фреймворк подключается перед стилями проекта: правила проекта перекрывают его -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- слой совместимости: гасит конфликты Reboot и компонентов фреймворка -->
+  <link rel="stylesheet" href="css/framework-compat.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/jquery-ui-theme.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <!-- адаптивные страницы на сетке фреймворка (Занятие 9) -->
+  <link rel="stylesheet" href="css/grid-pages.css">
+  <script src="js/jquery-3.7.1.min.js" defer></script>
+  <script src="js/jquery-ui.min.js" defer></script>
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<header>
+  <!-- логотип и название портала -->
+  <div class="brand">
+    <img class="logo" src="assets/img/logo.svg" alt="">
+    <p class="brand-name">Дети войны</p>
+    <p>Белорусские пионеры в тылу и на фронте</p>
+  </div>
+
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">Тёмная тема</button>
+
+  <p class="status"><img class="star" src="assets/img/logo.svg" alt=""> Архив пополняется: материалы оцифровываются</p>
+
+  <!-- бегущая строка (два одинаковых блока — для бесшовного повтора) -->
+  <div class="ticker">
+    <div class="ticker-set">
+      <span>22 июня 1941 — 9 мая 1945</span>
+      <span>Мы помним каждого</span>
+      <span>Судьбы детей Беларуси</span>
+      <span>Пионеры и партизаны</span>
+      <span>Музейные архивы</span>
+    </div>
+    <div class="ticker-set" aria-hidden="true">
+      <span>22 июня 1941 — 9 мая 1945</span>
+      <span>Мы помним каждого</span>
+      <span>Судьбы детей Беларуси</span>
+      <span>Пионеры и партизаны</span>
+      <span>Музейные архивы</span>
+    </div>
+  </div>
+</header>
+
+<nav class="navbar navbar-expand-lg topnav-portal" aria-label="Основная навигация">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img class="logo" src="assets/img/logo.svg" alt="">
+      <span>Дети войны</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Переключить навигацию">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html#about">О проекте</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#cards">Разделы</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#history">Хроника</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#archive">Музейный архив</a></li>
+        <li class="nav-item"><a class="nav-link" href="checklist.html">Чек-лист</a></li>
+        <li class="nav-item"><a class="nav-link" href="registry.html">Каталог записей</a></li>
+        <li class="nav-item"><a class="nav-link" href="knowledge.html">Проверка знаний</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-4" id="main">
+
+  <!-- хлебные крошки -->
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <ol>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="section-1.html">Раздел 1. Судьбы детей</a></li>
+      <li><a href="section-2.html">Раздел 2. Пионеры и партизаны</a></li>
+      <li><a href="section-3.html" aria-current="page">Раздел 3. Тыл: труд и лишения</a></li>
+      <li><a href="section-4.html">Раздел 4. Музейный архив</a></li>
+    </ol>
+  </nav>
+
+  <div class="row g-4">
+
+    <!-- основной контент: на мобильном идёт первым, на широком — справа -->
+    <div class="col-12 col-lg-9 order-1 order-lg-2">
+      <div class="page__main">
+
+        <h1>Тыл: труд и лишения</h1>
+
+        <p class="text-body-secondary">
+          С началом войны взрослые ушли на фронт, и их место заняли подростки.
+          Дети работали на заводах и в колхозах, учились и посильно помогали
+          фронту — о тех, кто ковал победу в тылу, рассказывает этот раздел.
+        </p>
+
+        <!-- блок «Пояснения и рекомендации»: три колонки → две → одна -->
+        <section>
+          <h2>Пояснения и рекомендации</h2>
+          <div class="row g-3 grid-row">
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="w-100 p-3 bg-body border rounded-3 shadow-sm">
+                <h3 class="h5 mb-2">Труд на заводах и в сёлах</h3>
+                <p class="mb-0 text-body-secondary">
+                  С уходом взрослых на фронт подростки встали к станкам и вышли
+                  в поля: работали наравне со взрослыми, нередко сверхурочно.
+                </p>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="w-100 p-3 bg-body border rounded-3 shadow-sm">
+                <h3 class="h5 mb-2">Учёба в военное время</h3>
+                <p class="mb-0 text-body-secondary">
+                  Школы продолжали работать. Занятия шли в холодных классах,
+                  не хватало учебников, но дети совмещали учёбу с работой.
+                </p>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="w-100 p-3 bg-body border rounded-3 shadow-sm">
+                <h3 class="h5 mb-2">Помощь фронту</h3>
+                <p class="mb-0 text-body-secondary">
+                  Школьники собирали металлолом и травы, сдавали тёплые вещи
+                  и деньги в фонд обороны, писали письма бойцам.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- таблица справочных данных в адаптивной обёртке -->
+        <div class="table-responsive">
+          <table class="data-table table-hover align-middle">
+            <caption>Таблица 3.1 — Справочные значения по работе в тылу</caption>
+            <thead>
+              <tr>
+                <th scope="col">Показатель</th>
+                <th scope="col">Значение</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Возраст начала работы</td>
+                <td>с 12–14 лет</td>
+              </tr>
+              <tr>
+                <td>Продолжительность смены</td>
+                <td>10–12 часов</td>
+              </tr>
+              <tr>
+                <td>Норма выработки подростка</td>
+                <td>наравне со взрослым рабочим</td>
+              </tr>
+              <tr>
+                <td>Виды работ в тылу</td>
+                <td>заводы, колхозы, заготовка дров и сена</td>
+              </tr>
+              <tr>
+                <td>Помощь фронту</td>
+                <td>сбор средств, теплых вещей, металлолома</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- врезка-памятка на всю ширину (утилиты цвета, рамки и скругления) -->
+        <aside class="my-4 p-3 bg-body-tertiary border-start border-4 border-success rounded-end-3 shadow-sm" aria-labelledby="notice-memo">
+          <h3 class="h5 text-success mb-2" id="notice-memo">Памятка</h3>
+          <p class="mb-0 text-body-secondary">
+            Труд детей в тылу — часть общей истории Победы. Уважение к этому
+            труду и память о нём учат ценить мирное время и заботиться
+            о старшем поколении.
+          </p>
+        </aside>
+
+      </div>
+    </div>
+
+    <!-- боковая навигация раздела: на широком экране — слева -->
+    <aside class="col-12 col-lg-3 order-2 order-lg-1 page-aside" aria-label="Боковая панель">
+      <nav class="sidenav" aria-label="Разделы портала">
+        <p class="sidenav-title">Разделы</p>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="section-1.html">Раздел 1. Судьбы детей</a></li>
+          <li><a href="section-2.html">Раздел 2. Пионеры и партизаны</a></li>
+          <li><a href="section-3.html" aria-current="page">Раздел 3. Тыл: труд и лишения</a></li>
+          <li><a href="section-4.html">Раздел 4. Музейный архив</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3>Контакты учебного заведения</h3>
+      <ul>
+        <li>Адрес: г. Пинск, ул. Федотова, 36</li>
+        <li>Телефон: +375 29 292-92-92</li>
+        <li>Почта: otvet@pgktit.by</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Источники по теме</h3>
+      <ul>
+        <li><a href="https://warmuseum.by/" target="_blank" rel="noopener">Белорусский государственный музей истории ВОВ</a></li>
+        <li><a href="https://khatyn.by/" target="_blank" rel="noopener">Мемориальный комплекс «Хатынь»</a></li>
+        <li><a href="https://archives.gov.by/" target="_blank" rel="noopener">Национальный архив Республики Беларусь</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="footer-bottom">
+    © 2026 «Дети войны» · Учебная практика «Веб-программирование»
+  </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* animations.css — переходы и анимации (задания 5–10) */
+
+/* бегущая строка: равномерное движение и остановка при наведении */
+.ticker-set {
+  animation: ticker 25s linear infinite;
+}
+
+.ticker:hover .ticker-set {
+  animation-play-state: paused;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* пульсация индикатора (звезда) */
+.star {
+  animation: pulse 1.0s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+/* вращение звезды в герое */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* появление карточек с задержкой (animation-fill-mode: both) */
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation-name: appear;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+.grid-row > [class*="col-"]:nth-child(1) .card { animation-delay: 0.1s; }
+.grid-row > [class*="col-"]:nth-child(2) .card { animation-delay: 0.25s; }
+.grid-row > [class*="col-"]:nth-child(3) .card { animation-delay: 0.4s; }
+.grid-row > [class*="col-"]:nth-child(4) .card { animation-delay: 0.55s; }
+
+@keyframes appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* наведение на карточку */
+.card:hover {
+  transform: scale(1.05) rotate(-3deg);
+  box-shadow: 0 14px 28px rgba(58, 16, 8, 0.3);
+}
+
+/* наведение на знак безопасности (изображение): ч/б → цвет */
+.card img {
+  transition: filter 0.3s;
+}
+
+.card img:hover {
+  filter: none;
+}
+
+/* кнопки-переходы: фон и тень при наведении, масштаб при нажатии */
+.btn {
+  transition: color 0.25s, background-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #8e2f2f;
+  box-shadow: 0 8px 18px rgba(142, 47, 47, 0.45);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.card-radial .btn:hover {
+  color: #ffffff;
+  background-color: #8e1218;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+}
+
+/* доступность: отключаем движение по системной настройке */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .card:hover,
+  .btn:active {
+    transform: none !important;
+  }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сравнение: собственная вёрстка — Дети войны</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <img class="logo" src="assets/img/logo.svg" alt="">
+    <h1>Дети войны</h1>
+    <p>Белорусские пионеры в тылу и на фронте</p>
+  </div>
+  <p class="status">Вариант 1 — собственная вёрстка проекта (CSS Grid и Flexbox)</p>
+</header>
+
+<nav class="topnav" aria-label="Основная навигация">
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <label class="burger" for="menu-toggle">
+    <span class="burger-open">☰ Меню</span>
+    <span class="burger-close">✕ Закрыть</span>
+  </label>
+  <ul>
+    <li><a href="compare-native.html" aria-current="page">Собственная вёрстка</a></li>
+    <li><a href="compare-bootstrap.html">Вёрстка на фреймворке</a></li>
+    <li><a href="catalog.html">Каталог (Bootstrap)</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h1>Каталог записей</h1>
+  <p>Одна и та же страница, свёрстанная собственными средствами проекта.</p>
+
+  <form class="registry-filters" role="search">
+    <div class="registry-field">
+      <label for="cmp-search">Поиск</label>
+      <input type="search" id="cmp-search" placeholder="Наименование, номер...">
+    </div>
+    <div class="registry-field">
+      <label for="cmp-section">Раздел</label>
+      <select id="cmp-section">
+        <option>Все разделы</option>
+        <option>Судьбы детей</option>
+        <option>Пионеры и партизаны</option>
+      </select>
+    </div>
+    <div class="registry-field registry-field--reset">
+      <button class="btn btn-outline" type="button">Сбросить</button>
+    </div>
+  </form>
+
+  <div class="table-scroll">
+    <table class="data-table">
+      <caption>Записи каталога</caption>
+      <thead>
+        <tr>
+          <th scope="col">Наименование</th>
+          <th scope="col">Категория</th>
+          <th scope="col">Номер</th>
+          <th scope="col">Дата</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Письмо Анны Ковалёвой матери</td><td>Письмо</td><td>ФД-001</td><td>12.04.1943</td></tr>
+        <tr><td>Дневник Коли Руденко</td><td>Дневник</td><td>ФД-002</td><td>03.11.1942</td></tr>
+        <tr><td>Наградной лист юного разведчика Петра Гурина</td><td>Наградной лист</td><td>ФД-004</td><td>20.07.1944</td></tr>
+        <tr><td>Воспоминания Марии Лебедевой</td><td>Воспоминание</td><td>ФД-005</td><td>09.05.1985</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section>
+    <h2>Информация</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Разделы</h3>
+        <p>Четыре тематических раздела каталога.</p>
+      </article>
+      <article class="card">
+        <h3>Категории</h3>
+        <p>Восемь категорий архивных записей.</p>
+      </article>
+      <article class="card">
+        <h3>Период</h3>
+        <p>Документы 1940–1985 годов.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3>Контакты учебного заведения</h3>
+      <ul>
+        <li>Адрес: г. Пинск, ул. Федотова, 36</li>
+        <li>Телефон: +375 29 292-92-92</li>
+        <li>Почта: otvet@pgktit.by</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Источники по теме</h3>
+      <ul>
+        <li><a href="https://warmuseum.by/" target="_blank" rel="noopener">Белорусский государственный музей истории ВОВ</a></li>
+        <li><a href="https://khatyn.by/" target="_blank" rel="noopener">Мемориальный комплекс «Хатынь»</a></li>
+        <li><a href="https://archives.gov.by/" target="_blank" rel="noopener">Национальный архив Республики Беларусь</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer-bottom">
+    © 2026 «Дети войны» · Учебная практика «Веб-программирование»
+  </p>
+</footer>
+
+</body>
+</html>

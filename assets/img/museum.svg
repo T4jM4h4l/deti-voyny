@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" role="img" aria-label="Здание музея с колоннами">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3ecd9"/>
+      <stop offset="1" stop-color="#d8c9a4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="260" fill="#e3d6b6"/>
+  <rect y="212" width="400" height="48" fill="#bfae86"/>
+
+  <g stroke="#6b5b3e" stroke-width="3" fill="url(#wall)">
+    <rect x="66" y="86" width="268" height="112" stroke="none"/>
+    <path d="M56 86 200 30l144 56z" stroke="none"/>
+    <rect x="60" y="82" width="280" height="10" stroke="none"/>
+    <rect x="56" y="196" width="288" height="16" stroke="none"/>
+    <rect x="48" y="212" width="304" height="14" stroke="none"/>
+  </g>
+
+  <g fill="#f7f2e4" stroke="#6b5b3e" stroke-width="3">
+    <rect x="84" y="96" width="34" height="98"/>
+    <rect x="140" y="96" width="34" height="98"/>
+    <rect x="196" y="96" width="34" height="98"/>
+    <rect x="252" y="96" width="34" height="98"/>
+  </g>
+
+  <rect x="296" y="96" width="30" height="98" fill="#6b5b3e" opacity="0.85"/>
+  <circle cx="309" cy="150" r="3" fill="#f0c04a"/>
+
+  <path d="M200 44l10 19 21 3-15 15 4 21-20-10-20 10 4-21-15-15 21-3z" fill="#8e2f2f"/>
+
+  <g stroke="#6b5b3e" stroke-width="4" stroke-linecap="round" opacity="0.6">
+    <path d="M40 240h320"/>
+  </g>
+</svg>

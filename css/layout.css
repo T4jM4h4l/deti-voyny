@@ -1,0 +1,658 @@
+/* layout.css — каркас макета: CSS Grid и Flexbox (занятия 2–3) */
+
+/* каркас страницы: шапка — основная область — подвал */
+body {
+  display: grid;
+  grid-template-columns: minmax(0, 100%);   /* единственный трек сжимается до окна */
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+  overflow-x: clip;                         /* clip, а не hidden: не ломает position: sticky */
+}
+
+header { grid-area: header; }
+
+/* закреплённая полоса меню: остаётся вверху при прокрутке */
+.topnav {
+  grid-area: nav;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 8px 12px;
+  background: #8e1218;
+  text-align: center;
+}
+
+footer { grid-area: footer; }
+
+/* контентная область макета: 900px по центру */
+main {
+  grid-area: main;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px 20px;
+}
+
+/* ================= двухколоночный макет внутренних страниц (занятие 3) ============== */
+
+/* каркас внутренней страницы: боковая колонка 260px + контент */
+.page {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 32px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* основная колонка: min-width: 0 не даёт длинному содержимому расширять колонку */
+.page__main {
+  min-width: 0;
+}
+
+/* списки внутри контента раздела */
+.page__main ul,
+.page__main ol {
+  padding-left: 22px;
+  margin-bottom: 12px;
+}
+
+.page__main li {
+  margin-bottom: 6px;
+}
+
+/* боковая колонка: удерживается в зоне видимости при прокрутке */
+.page__aside {
+  align-self: start;
+  position: sticky;
+  top: 16px;
+}
+
+.breadcrumbs {
+  grid-column: 1 / -1;                  /* на всю ширину над двумя колонками */
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--crumb);
+}
+
+.breadcrumbs ol,
+.breadcrumbs ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+}
+
+.breadcrumbs li::after {
+  content: "·";
+  margin-left: 6px;
+  color: var(--crumb);
+}
+
+.breadcrumbs li:last-child::after { content: ""; }
+
+.breadcrumbs a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover { text-decoration: underline; }
+
+.breadcrumbs a[aria-current="page"] {
+  color: var(--heading);
+  font-weight: bold;
+}
+
+/* боковая навигация раздела — список ссылок */
+.sidenav {
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(58, 16, 8, 0.10);
+}
+
+.sidenav h2,
+.sidenav-title {
+  margin: 0 0 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--heading);
+}
+
+.sidenav ul {
+  display: block;                     /* вертикальный список: один пункт на строку */
+  list-style: none;
+}
+
+.sidenav li + li { margin-top: 6px; }
+
+.sidenav a {
+  display: block;
+  padding: 7px 12px;
+  color: var(--muted);
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.sidenav a:hover { background: var(--surface-alt); }
+
+/* активный пункт бокового меню */
+.sidenav a[aria-current="page"] {
+  background: #8e1218;
+  color: #fff7ec;
+  font-weight: bold;
+}
+
+/* таблица справочных данных */
+.data-table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.data-table caption {
+  margin-bottom: 8px;
+  color: var(--heading);
+  font-weight: bold;
+  text-align: left;
+  caption-side: top;
+}
+
+.data-table th,
+.data-table td {
+  padding: 9px 12px;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+
+.data-table thead th {
+  background: #1c6e37;
+  color: #fff7ec;
+}
+
+.data-table tbody tr:nth-child(even) { background: var(--row-alt); }
+
+/* контейнер для горизонтальной прокрутки таблицы на узких экранах */
+.table-scroll { overflow-x: auto; }
+
+/* интерактивный чек-лист (Занятие 5) */
+.checklist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.checklist-item {
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(58, 16, 8, 0.08);
+}
+
+/* выбран ответ «Не соответствует» — предупреждающее выделение */
+.checklist-item.is-bad {
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(165, 20, 27, 0.18);
+}
+
+.checklist-question {
+  margin: 0 0 12px;
+  color: var(--heading);
+  font-weight: bold;
+}
+
+.checklist-answers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+  margin-bottom: 12px;
+}
+
+.checklist-answers label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.checklist-comment {
+  width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.checklist-comment[hidden] {
+  display: none;
+}
+
+.checklist-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* блок итогов: цвет левой полосы = уровень соответствия */
+.result-box {
+  margin-top: 20px;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(58, 16, 8, 0.08);
+}
+
+.result-box h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.result-box.good { border-left-color: #1c6e37; }   /* высокий уровень — зелёный */
+.result-box.ok   { border-left-color: #c99a2a; }   /* удовлетворительный — жёлтый */
+.result-box.bad  { border-left-color: #a5141b; }   /* есть несоответствия — красный */
+
+/* пока модальное окно фреймворка открыто, фон не прокручивается */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* ===== поиск и фильтрация по тексту (Занятие 5, Задание 8) ===== */
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.search__label {
+  font-weight: bold;
+  color: var(--heading);
+}
+
+.search__input {
+  flex: 1 1 240px;
+  min-width: 0;
+  padding: 9px 14px;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.search__input:focus {
+  outline: 2px solid var(--link);
+  outline-offset: 1px;
+}
+
+.search__count {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* скрытие отфильтрованных новостей */
+.news-item[hidden] {
+  display: none;
+}
+
+/* ===== каталог записей (Занятие 6, Задание 3) ===== */
+.registry-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px 18px;
+  margin: 16px 0 8px;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(58, 16, 8, 0.08);
+}
+
+.registry-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.registry-field label {
+  font-weight: bold;
+  color: var(--heading);
+}
+
+.registry-field input,
+.registry-field select {
+  padding: 9px 12px;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.registry-field input:focus,
+.registry-field select:focus {
+  outline: 2px solid var(--link);
+  outline-offset: 1px;
+}
+
+/* кнопка сброса: прижата к низу поля */
+.registry-field--reset {
+  justify-content: flex-end;
+}
+
+.registry-field--reset .btn {
+  width: 100%;
+}
+
+/* строка с количеством найденных записей */
+.registry-count {
+  margin: 14px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* состояние «ничего не найдено» */
+.registry-empty {
+  margin: 20px 0;
+  padding: 18px;
+  text-align: center;
+  color: var(--muted);
+  background: var(--surface-alt);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+}
+
+.registry-empty[hidden] {
+  display: none;
+}
+
+/* индикатор загрузки данных */
+.registry-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0;
+  color: var(--muted);
+}
+
+.registry-status::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 3px solid var(--border);
+  border-top-color: var(--link);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.registry-status[hidden] {
+  display: none;
+}
+
+/* скрытие таблицы при ошибке загрузки */
+.registry-table[hidden],
+.table-scroll[hidden] {
+  display: none;
+}
+
+/* появление строк с задержкой и подсветка при наведении (Занятие 6, Задание 8) */
+.registry-table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.registry-table tbody tr.is-hover {
+  background: var(--surface-alt);
+}
+
+/* ===== статистика каталога: гистограмма средствами CSS (Занятие 6, Задание 9) ===== */
+.registry-stats-status {
+  margin: 12px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.hist-block {
+  margin: 18px 0;
+}
+
+.hist-title {
+  margin: 0 0 10px;
+  color: var(--heading);
+}
+
+/* строка гистограммы: подпись — дорожка — значение */
+.hist-row {
+  display: grid;
+  grid-template-columns: minmax(96px, 180px) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* строка, выведенная очередью setInterval */
+.hist-row.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.hist-label {
+  font-size: 14px;
+  text-align: right;
+  color: var(--text);
+}
+
+.hist-track {
+  display: block;
+  height: 18px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.hist-bar {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--link);
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+.hist-value {
+  min-width: 2ch;
+  font-weight: bold;
+  text-align: right;
+  color: var(--heading);
+}
+
+/* на узких экранах подпись переносится над дорожкой */
+@media (max-width: 520px) {
+  .hist-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .hist-label {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+}
+
+/* ===== проверка знаний: форма участника (Занятие 7, задание 2) ===== */
+.knowledge-form {
+  margin: 16px 0;
+}
+
+.form-error {
+  margin: 0;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+/* индикатор прогресса ответов (Занятие 7, задание 4) */
+.quiz-progress__label {
+  margin: 0 0 6px;
+  font-weight: bold;
+  color: var(--heading);
+}
+
+/* задание на порядок действий (Занятие 7, задание 5) */
+.sortable-task {
+  margin: 24px 0 8px;
+}
+
+.sortable-list {
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sortable-item {
+  margin: 0 0 8px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(58, 16, 8, 0.08);
+  cursor: move;
+  user-select: none;
+}
+
+.sortable-item:last-child {
+  margin-bottom: 0;
+}
+
+.sortable-item.ui-sortable-helper {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  cursor: grabbing;
+}
+
+.sortable-placeholder {
+  margin: 0 0 8px;
+  border-radius: 10px;
+  background: var(--surface-alt);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+.sortable-result {
+  margin: 12px 0 0;
+  font-weight: bold;
+}
+
+.sortable-result--ok {
+  color: var(--link);
+}
+
+.sortable-result--error {
+  color: var(--accent);
+}
+
+/* ===== проверка знаний: блок вопросов (Занятие 7, задание 3) ===== */
+.quiz-question {
+  margin: 0 0 12px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(58, 16, 8, 0.08);
+}
+
+.quiz-question:last-child {
+  margin-bottom: 0;
+}
+
+.quiz-question__title {
+  margin: 0 0 10px;
+  font-weight: bold;
+  color: var(--heading);
+}
+
+.quiz-question label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.quiz-question label:last-of-type {
+  margin-bottom: 0;
+}
+
+.quiz-question input[type="radio"] {
+  margin-top: 4px;
+}
+
+/* внутренние страницы: одна колонка */
+@media (max-width: 860px) {
+  .page { grid-template-columns: 1fr; }
+  .page__aside { position: static; }
+}
+
+/* адаптивность: сужение окна и масштаб 200 % (карточки переносятся авто-сеткой) */
+@media (max-width: 1100px) {
+  header { padding: 16px 12px; }
+  main   { padding: 20px 16px; }
+  .hero  { padding: 28px 18px; }
+
+  section h2 { font-size: 25px; }
+  .hero h2   { font-size: 25px; }
+}
+
+@media (max-width: 1000px) {
+  header   { padding: 14px 10px; }
+  .brand .logo { width: 42px; height: 42px; }
+
+  .hero { min-height: 0; }
+  .hero h2   { font-size: 24px; }
+  section h2 { font-size: 23px; }
+
+  /* заметная перестройка: кнопки героя столбцом */
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 760px) {
+  .ticker { margin: 14px -10px -12px; }
+  main    { padding: 16px 12px; }
+
+  .hero h2   { font-size: 22px; }
+  section h2 { font-size: 22px; }
+
+  .footer-inner { gap: 20px; }
+}
+
+@media (max-width: 480px) {
+  main { padding: 14px 10px; }
+  .brand { gap: 4px; }
+  .brand .logo { width: 36px; height: 36px; }
+
+  .hero h2   { font-size: 20px; }
+  section h2 { font-size: 20px; }
+
+  .hero-actions .btn { max-width: 260px; }
+}

@@ -1,0 +1,57 @@
+/* print.css — стили печати памяток (Занятие 12, Задание 7).
+   Подключается с media="print": на экране не применяется. */
+
+@media print {
+  /* убираем служебные элементы интерфейса */
+  .topnav,
+  .site-footer,
+  .breadcrumbs,
+  .page-aside,
+  .btn,
+  .toast,
+  .modal,
+  .modal-backdrop,
+  .sortable-toggle,
+  .catalog-sidebar,
+  .form-actions {
+    display: none !important;
+  }
+
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+  }
+
+  body {
+    margin: 0;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    word-break: break-all;
+  }
+
+  /* памятки и карточки не разрываются между страницами */
+  .card,
+  .checklist-item,
+  .step,
+  .hist-block {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #000 !important;
+  }
+
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

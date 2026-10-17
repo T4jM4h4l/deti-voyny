@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Проверка знаний — Дети войны</title>
+  <!-- фреймворк подключается перед стилями проекта: правила проекта перекрывают его -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- слой совместимости: гасит конфликты Reboot и компонентов фреймворка -->
+  <link rel="stylesheet" href="css/framework-compat.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/jquery-ui-theme.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <script src="js/jquery-3.7.1.min.js" defer></script>
+  <script src="js/jquery-ui.min.js" defer></script>
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/knowledge.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<header>
+  <div class="brand">
+    <img class="logo" src="assets/img/logo.svg" alt="">
+    <p class="brand-name">Дети войны</p>
+    <p>Белорусские пионеры в тылу и на фронте</p>
+  </div>
+
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">Тёмная тема</button>
+
+  <p class="status"><img class="star" src="assets/img/logo.svg" alt=""> Архив пополняется: материалы оцифровываются</p>
+
+  <div class="ticker">
+    <div class="ticker-set">
+      <span>22 июня 1941 — 9 мая 1945</span>
+      <span>Мы помним каждого</span>
+      <span>Судьбы детей Беларуси</span>
+      <span>Пионеры и партизаны</span>
+      <span>Музейные архивы</span>
+    </div>
+    <div class="ticker-set" aria-hidden="true">
+      <span>22 июня 1941 — 9 мая 1945</span>
+      <span>Мы помним каждого</span>
+      <span>Судьбы детей Беларуси</span>
+      <span>Пионеры и партизаны</span>
+      <span>Музейные архивы</span>
+    </div>
+  </div>
+</header>
+
+<nav class="navbar navbar-expand-lg topnav-portal" aria-label="Основная навигация">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img class="logo" src="assets/img/logo.svg" alt="">
+      <span>Дети войны</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Переключить навигацию">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html#about">О проекте</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#cards">Разделы</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#history">Хроника</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#archive">Музейный архив</a></li>
+        <li class="nav-item"><a class="nav-link" href="checklist.html">Чек-лист</a></li>
+        <li class="nav-item"><a class="nav-link" href="registry.html">Каталог записей</a></li>
+        <li class="nav-item"><a class="nav-link active" href="knowledge.html" aria-current="page">Проверка знаний</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+  <section>
+    <h1>Проверка знаний</h1>
+    <p>Страница проверки знаний по теме «Дети войны». Заполните данные обучающегося, укажите дату проверки и номер работы, затем приступите к выполнению заданий.</p>
+
+    <!-- кнопка, открывающая модальное окно с пояснением по теме -->
+    <p><button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#topic-help-modal">Пояснение по теме</button></p>
+
+    <h2>Данные обучающегося</h2>
+
+    <form class="knowledge-form" id="knowledge-form" novalidate>
+      <div class="border rounded-3 p-3 p-md-4 bg-body mb-4">
+        <div class="row g-3">
+          <div class="col-12 col-md-6 field">
+            <label class="form-label" for="student-name">Фамилия и имя обучающегося</label>
+            <input type="text" class="form-control" id="student-name" name="studentName" autocomplete="name" aria-describedby="student-name-hint" required>
+            <p class="form-text" id="student-name-hint">Введите фамилию и имя через пробел, только буквами.</p>
+          </div>
+
+          <div class="col-12 col-md-6 field">
+            <label class="form-label" for="student-group">Учебная группа</label>
+            <input type="text" class="form-control" id="student-group" name="studentGroup" autocomplete="off" required>
+          </div>
+
+          <div class="col-12 col-md-6 field">
+            <label class="form-label" for="check-date">Дата проверки</label>
+            <input type="text" class="form-control" id="check-date" name="checkDate" autocomplete="off" aria-describedby="check-date-hint" readonly required>
+            <p class="form-text" id="check-date-hint">Выберите дату в календаре, формат: дд.мм.гггг.</p>
+          </div>
+
+          <div class="col-12 col-md-6 field">
+            <label class="form-label" for="student-email">Электронная почта для уведомления</label>
+            <input type="email" class="form-control" id="student-email" name="studentEmail" autocomplete="email" placeholder="name@example.com" required>
+          </div>
+
+          <div class="col-12 col-md-6 field">
+            <label class="form-label" for="check-number">Номер проверки</label>
+            <input type="text" class="form-control" id="check-number" name="checkNumber" inputmode="numeric" autocomplete="off" aria-describedby="check-number-hint" required>
+            <p class="form-text" id="check-number-hint">Укажите номер от 1 до 999.</p>
+          </div>
+
+          <div class="col-12 field">
+            <label class="form-label" for="level-slider">Оценка уровня подготовки по теме</label>
+            <input type="range" class="form-range" id="level-slider" min="0" max="10" step="1" value="5" aria-describedby="level-value-hint">
+            <p class="form-text" id="level-value-hint">Ваша оценка: <output id="level-value">5</output> из 10.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Вопросы по теме</h2>
+      <p>Выберите один вариант ответа в каждом вопросе. Вопросы сгруппированы по разделам темы.</p>
+
+      <div class="my-3">
+        <p class="quiz-progress__label" id="quiz-progress-label">Отвечено вопросов: <span id="quiz-progress-count">0</span> из <span id="quiz-progress-total">12</span></p>
+        <div class="progress" id="quiz-progressbar" role="progressbar" aria-labelledby="quiz-progress-label" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0">
+          <div class="progress-bar" id="quiz-progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="accordion quiz-accordion" id="quiz-accordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="quiz-heading-1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#quiz-1" aria-expanded="true" aria-controls="quiz-1">Судьбы детей</button>
+          </h2>
+          <div id="quiz-1" class="accordion-collapse collapse show" aria-labelledby="quiz-heading-1" data-bs-parent="#quiz-accordion">
+            <div class="accordion-body">
+              <div class="quiz-question" data-correct="b" role="radiogroup" aria-labelledby="q1-text">
+                <p class="quiz-question__title" id="q1-text">1. Когда началась Великая Отечественная война?</p>
+                <label><input type="radio" name="q1" value="a"> 1 сентября 1939 года</label>
+                <label><input type="radio" name="q1" value="b"> 22 июня 1941 года</label>
+                <label><input type="radio" name="q1" value="c"> 9 мая 1945 года</label>
+              </div>
+
+              <div class="quiz-question" data-correct="b" role="radiogroup" aria-labelledby="q2-text">
+                <p class="quiz-question__title" id="q2-text">2. Что происходило с детьми на оккупированной территории Беларуси?</p>
+                <label><input type="radio" name="q2" value="a"> Они продолжали учиться в обычных школах</label>
+                <label><input type="radio" name="q2" value="b"> Их вывозили на принудительные работы, часть угоняли в Германию</label>
+                <label><input type="radio" name="q2" value="c"> Их не привлекали к труду</label>
+              </div>
+
+              <div class="quiz-question" data-correct="a" role="radiogroup" aria-labelledby="q3-text">
+                <p class="quiz-question__title" id="q3-text">3. Что такое мемориальный комплекс «Хатынь»?</p>
+                <label><input type="radio" name="q3" value="a"> Памятник сожжённой вместе с жителями деревне</label>
+                <label><input type="radio" name="q3" value="b"> Музей космонавтики</label>
+                <label><input type="radio" name="q3" value="c"> Крепость-герой</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="quiz-heading-2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#quiz-2" aria-expanded="false" aria-controls="quiz-2">Пионеры и партизаны</button>
+          </h2>
+          <div id="quiz-2" class="accordion-collapse collapse" aria-labelledby="quiz-heading-2" data-bs-parent="#quiz-accordion">
+            <div class="accordion-body">
+              <div class="quiz-question" data-correct="a" role="radiogroup" aria-labelledby="q4-text">
+                <p class="quiz-question__title" id="q4-text">4. Кем был юный герой Марат Казей?</p>
+                <label><input type="radio" name="q4" value="a"> Разведчиком партизанского отряда</label>
+                <label><input type="radio" name="q4" value="b"> Лётчиком</label>
+                <label><input type="radio" name="q4" value="c"> Военным врачом</label>
+              </div>
+
+              <div class="quiz-question" data-correct="b" role="radiogroup" aria-labelledby="q5-text">
+                <p class="quiz-question__title" id="q5-text">5. Кем была Зина Портнова?</p>
+                <label><input type="radio" name="q5" value="a"> Учительницей в тылу</label>
+                <label><input type="radio" name="q5" value="b"> Юной подпольщицей и разведчицей</label>
+                <label><input type="radio" name="q5" value="c"> Медсестрой в госпитале</label>
+              </div>
+
+              <div class="quiz-question" data-correct="a" role="radiogroup" aria-labelledby="q6-text">
+                <p class="quiz-question__title" id="q6-text">6. Какую помощь оказывали пионеры партизанским отрядам?</p>
+                <label><input type="radio" name="q6" value="a"> Были связными, разведчиками и подрывниками</label>
+                <label><input type="radio" name="q6" value="b"> Строили самолёты</label>
+                <label><input type="radio" name="q6" value="c"> Управляли танками</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="quiz-heading-3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#quiz-3" aria-expanded="false" aria-controls="quiz-3">Тыл: труд и лишения</button>
+          </h2>
+          <div id="quiz-3" class="accordion-collapse collapse" aria-labelledby="quiz-heading-3" data-bs-parent="#quiz-accordion">
+            <div class="accordion-body">
+              <div class="quiz-question" data-correct="a" role="radiogroup" aria-labelledby="q7-text">
+                <p class="quiz-question__title" id="q7-text">7. Где работали эвакуированные белорусские дети в советском тылу?</p>
+                <label><input type="radio" name="q7" value="a"> На заводах и в колхозах наравне со взрослыми</label>
+                <label><input type="radio" name="q7" value="b"> Только в школах</label>
+                <label><input type="radio" name="q7" value="c"> Они не работали</label>
+              </div>
+
+              <div class="quiz-question" data-correct="b" role="radiogroup" aria-labelledby="q8-text">
+                <p class="quiz-question__title" id="q8-text">8. Что происходило со школами на оккупированной территории Беларуси?</p>
+                <label><input type="radio" name="q8" value="a"> Они работали без изменений</label>
+                <label><input type="radio" name="q8" value="b"> Они были закрыты</label>
+                <label><input type="radio" name="q8" value="c"> Их открывали только для немецких детей</label>
+              </div>
+
+              <div class="quiz-question" data-correct="a" role="radiogroup" aria-labelledby="q9-text">
+                <p class="quiz-question__title" id="q9-text">9. Что означает понятие «трудовой фронт»?</p>
+                <label><input type="radio" name="q9" value="a"> Работа в тылу на заводах и в колхозах для нужд фронта</label>
+                <label><input type="radio" name="q9" value="b"> Боевые действия в тылу врага</label>
+                <label><input type="radio" name="q9" value="c"> Строительство укреплений только солдатами</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="quiz-heading-4">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#quiz-4" aria-expanded="false" aria-controls="quiz-4">Музейный архив</button>
+          </h2>
+          <div id="quiz-4" class="accordion-collapse collapse" aria-labelledby="quiz-heading-4" data-bs-parent="#quiz-accordion">
+            <div class="accordion-body">
+              <div class="quiz-question" data-correct="a" role="radiogroup" aria-labelledby="q10-text">
+                <p class="quiz-question__title" id="q10-text">10. Какой музей в Минске посвящён истории Великой Отечественной войны?</p>
+                <label><input type="radio" name="q10" value="a"> Белорусский государственный музей истории Великой Отечественной войны</label>
+                <label><input type="radio" name="q10" value="b"> Национальный художественный музей</label>
+                <label><input type="radio" name="q10" value="c"> Музей истории города Минска</label>
+              </div>
+
+              <div class="quiz-question" data-correct="a" role="radiogroup" aria-labelledby="q11-text">
+                <p class="quiz-question__title" id="q11-text">11. Зачем сохраняют архивные документы и фотографии военных лет?</p>
+                <label><input type="radio" name="q11" value="a"> Чтобы передать память о событиях будущим поколениям</label>
+                <label><input type="radio" name="q11" value="b"> Чтобы использовать их как строительные материалы</label>
+                <label><input type="radio" name="q11" value="c"> Чтобы продавать за границу</label>
+              </div>
+
+              <div class="quiz-question" data-correct="b" role="radiogroup" aria-labelledby="q12-text">
+                <p class="quiz-question__title" id="q12-text">12. Какая дата отмечается как День Победы?</p>
+                <label><input type="radio" name="q12" value="a"> 23 февраля</label>
+                <label><input type="radio" name="q12" value="b"> 9 мая</label>
+                <label><input type="radio" name="q12" value="c"> 3 июля</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sortable-task">
+        <h2>Порядок действий</h2>
+        <p>Перетащите шаги так, чтобы восстановить правильную последовательность событий, затем нажмите «Проверить порядок».</p>
+
+        <ul class="sortable-list" id="sortable-steps" aria-label="Список шагов для упорядочивания">
+          <li class="sortable-item" data-order="4">Юные герои уходили в партизанские отряды и подполье</li>
+          <li class="sortable-item" data-order="1">Началась Великая Отечественная война (22 июня 1941 года)</li>
+          <li class="sortable-item" data-order="5">Беларусь освободили, дети вернулись к мирной жизни</li>
+          <li class="sortable-item" data-order="2">Родные места оказались на оккупированной территории</li>
+          <li class="sortable-item" data-order="3">Дети продолжали жить в оккупации или были эвакуированы в тыл</li>
+        </ul>
+
+        <div class="d-flex flex-wrap gap-2 mt-3">
+          <button type="button" class="btn" id="check-order">Проверить порядок</button>
+        </div>
+
+        <p class="sortable-result" id="sortable-result" role="status" aria-live="polite"></p>
+      </div>
+
+      <div class="d-flex flex-wrap gap-2 mt-3">
+        <button class="btn" type="submit" id="submit-check">Завершить проверку</button>
+      </div>
+      <p class="form-text" id="submit-hint" role="status"></p>
+    </form>
+  </section>
+
+  <div class="modal fade" id="topic-help-modal" tabindex="-1" aria-labelledby="topic-help-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="topic-help-title">Пояснение по теме «Дети войны»</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p>Тема «Дети войны» посвящена судьбам детей и подростков Беларуси в годы Великой Отечественной войны (1941–1945).</p>
+          <ul>
+            <li>Часть детей осталась на оккупированной территории: их принуждали к труду, многих угоняли в Германию.</li>
+            <li>Подростки становились связными, разведчиками и подпольщиками, помогали партизанским отрядам.</li>
+            <li>В советском тылу эвакуированные дети работали на заводах и в колхозах наравне со взрослыми.</li>
+            <li>Память о событиях сохраняют мемориалы, музеи и архивные документы.</li>
+          </ul>
+          <p>Отвечая на вопросы и восстанавливая порядок событий, опирайтесь на эти сведения.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-bs-dismiss="modal">Понятно</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="result-modal" tabindex="-1" aria-labelledby="result-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="result-modal-title">Результат проверки знаний</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p id="result-summary"></p>
+          <p>Уровень выполнения: <strong id="result-level"></strong></p>
+          <p id="result-confirm" role="status"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-bs-dismiss="modal">Понятно</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3>Контакты учебного заведения</h3>
+      <ul>
+        <li>Адрес: г. Пинск, ул. Федотова, 36</li>
+        <li>Телефон: +375 29 292-92-92</li>
+        <li>Почта: otvet@pgktit.by</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Источники по теме</h3>
+      <ul>
+        <li><a href="https://warmuseum.by/" target="_blank" rel="noopener">Белорусский государственный музей истории ВОВ</a></li>
+        <li><a href="https://khatyn.by/" target="_blank" rel="noopener">Мемориальный комплекс «Хатынь»</a></li>
+        <li><a href="https://archives.gov.by/" target="_blank" rel="noopener">Национальный архив Республики Беларусь</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="footer-bottom">
+    © 2026 «Дети войны» · Учебная практика «Веб-программирование»
+  </p>
+</footer>
+
+</body>
+</html>

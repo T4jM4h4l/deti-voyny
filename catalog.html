@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог записей (Bootstrap) — Дети войны</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/framework-theme.css">
+  <link rel="stylesheet" href="css/framework-page.css">
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<nav class="navbar navbar-expand-lg navbar-portal">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img class="brand-logo" src="assets/img/logo.svg" alt=""> Дети войны</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Переключить навигацию">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+        <li class="nav-item"><a class="nav-link" href="section-1.html">Раздел 1</a></li>
+        <li class="nav-item"><a class="nav-link" href="registry.html">Каталог (проект)</a></li>
+        <li class="nav-item"><a class="nav-link active" href="catalog.html" aria-current="page">Каталог (Bootstrap)</a></li>
+        <li class="nav-item"><a class="nav-link" href="knowledge.html">Проверка знаний</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-4">
+
+  <nav aria-label="Хлебные крошки">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Каталог записей</li>
+    </ol>
+  </nav>
+
+  <h1 class="mb-2">Каталог записей</h1>
+  <p class="text-secondary mb-4">
+    Прототип страницы каталога, свёрстанный на сетке CSS-фреймворка Bootstrap 5:
+    шапка, фильтры, таблица, постраничная навигация и подвал.
+  </p>
+
+  <!-- фильтры: колонка на всю ширину (col-12) -->
+  <div class="row g-3 mb-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="h5 card-title mb-3">Поиск и фильтрация</h2>
+          <form class="row g-3" role="search">
+            <div class="col-12 col-md-6 col-lg-4">
+              <label class="form-label" for="catalog-search">Поиск по каталогу</label>
+              <input class="form-control" type="search" id="catalog-search" placeholder="Наименование, номер, аннотация...">
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <label class="form-label" for="catalog-section">Раздел</label>
+              <select class="form-select" id="catalog-section">
+                <option selected>Все разделы</option>
+                <option>Судьбы детей</option>
+                <option>Пионеры и партизаны</option>
+                <option>Тыл: труд и лишения</option>
+                <option>Музейный архив</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <label class="form-label" for="catalog-sort">Сортировка</label>
+              <select class="form-select" id="catalog-sort">
+                <option selected>Наименование: А–Я</option>
+                <option>Наименование: Я–А</option>
+                <option>Дата: сначала старые</option>
+                <option>Дата: сначала новые</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2 d-flex align-items-end">
+              <button class="btn btn-outline-primary w-100" type="button">Сбросить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- таблица (col-lg-9) и боковая информация (col-lg-3) -->
+  <div class="row g-4">
+    <div class="col-12 col-lg-9">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+          <caption>Записи каталога — всего 14</caption>
+          <thead>
+            <tr>
+              <th scope="col">Наименование</th>
+              <th scope="col">Категория</th>
+              <th scope="col">Номер</th>
+              <th scope="col">Дата</th>
+              <th scope="col">Раздел</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Письмо Анны Ковалёвой матери</td><td>Письмо</td><td>ФД-001</td><td>12.04.1943</td><td>Судьбы детей</td></tr>
+            <tr><td>Дневник Коли Руденко</td><td>Дневник</td><td>ФД-002</td><td>03.11.1942</td><td>Тыл: труд и лишения</td></tr>
+            <tr><td>Фотография класса Пинской школы №2</td><td>Фотодокумент</td><td>ФД-003</td><td>01.09.1940</td><td>Судьбы детей</td></tr>
+            <tr><td>Наградной лист юного разведчика Петра Гурина</td><td>Наградной лист</td><td>ФД-004</td><td>20.07.1944</td><td>Пионеры и партизаны</td></tr>
+            <tr><td>Воспоминания Марии Лебедевой</td><td>Воспоминание</td><td>ФД-005</td><td>09.05.1985</td><td>Музейный архив</td></tr>
+            <tr><td>Выписка из газеты «Пионер Белоруссии»</td><td>Газетная выписка</td><td>ФД-006</td><td>10.05.1945</td><td>Музейный архив</td></tr>
+            <tr><td>Справка о нахождении в детском доме</td><td>Справка</td><td>ФД-007</td><td>15.09.1944</td><td>Судьбы детей</td></tr>
+            <tr><td>Личная карточка труженика тыла Ивана Сороки</td><td>Личная карточка</td><td>ФД-008</td><td>01.06.1943</td><td>Тыл: труд и лишения</td></tr>
+            <tr><td>Дневник связной Зинаиды Петровской</td><td>Дневник</td><td>ФД-009</td><td>27.09.1943</td><td>Пионеры и партизаны</td></tr>
+            <tr><td>Письмо отца сыну на фронт</td><td>Письмо</td><td>ФД-010</td><td>23.02.1942</td><td>Музейный архив</td></tr>
+            <tr><td>Фотография пионерского отряда у землянки</td><td>Фотодокумент</td><td>ФД-011</td><td>19.05.1943</td><td>Пионеры и партизаны</td></tr>
+            <tr><td>Воспоминание о первом дне войны</td><td>Воспоминание</td><td>ФД-012</td><td>22.06.1980</td><td>Судьбы детей</td></tr>
+            <tr><td>Список воспитанников детского дома</td><td>Справка</td><td>ФД-013</td><td>10.01.1944</td><td>Тыл: труд и лишения</td></tr>
+            <tr><td>Грамота за участие в восстановлении школы</td><td>Наградной лист</td><td>ФД-014</td><td>01.09.1945</td><td>Музейный архив</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <nav aria-label="Постраничная навигация">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled"><span class="page-link">Назад</span></li>
+          <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+          <li class="page-item"><a class="page-link" href="#top">2</a></li>
+          <li class="page-item"><a class="page-link" href="#top">3</a></li>
+          <li class="page-item"><a class="page-link" href="#top">Вперёд</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="col-12 col-lg-3 catalog-sidebar">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="h5 card-title">Информация о каталоге</h2>
+          <p class="card-text text-secondary mb-2">Всего записей: 14.</p>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2">Судьбы детей — 4</li>
+            <li class="mb-2">Пионеры и партизаны — 3</li>
+            <li class="mb-2">Тыл: труд и лишения — 3</li>
+            <li>Музейный архив — 4</li>
+          </ul>
+          <hr>
+          <p class="card-text text-secondary mb-0">
+            Прототип показывает применение сетки, точек перелома и компонентов фреймворка.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer-portal mt-auto py-4">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-md-6">
+        <h3 class="h6">Контакты учебного заведения</h3>
+        <ul class="list-unstyled mb-0">
+          <li>Адрес: г. Пинск, ул. Федотова, 36</li>
+          <li>Телефон: +375 29 292-92-92</li>
+          <li>Почта: otvet@pgktit.by</li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6">
+        <h3 class="h6">Источники по теме</h3>
+        <ul class="list-unstyled mb-0">
+          <li><a href="https://warmuseum.by/" target="_blank" rel="noopener">Белорусский государственный музей истории ВОВ</a></li>
+          <li><a href="https://khatyn.by/" target="_blank" rel="noopener">Мемориальный комплекс «Хатынь»</a></li>
+          <li><a href="https://archives.gov.by/" target="_blank" rel="noopener">Национальный архив Республики Беларусь</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-center mb-0 mt-3">© 2026 «Дети войны» · Учебная практика «Веб-программирование»</p>
+  </div>
+</footer>
+
+</body>
+</html>

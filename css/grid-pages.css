@@ -1,0 +1,56 @@
+/* grid-pages.css — адаптивные страницы на сетке фреймворка (Занятие 9).
+   Подключается последним: правила уточняют оформление страниц разделов
+   и карточек разделов, построенных на колонках Bootstrap.
+   В Занятии 10 часть правил заменена утилитами фреймворка; здесь оставлены
+   только компонентные стили и поведение, которым нет одноклассовой замены. */
+
+/* карточки внутри строки сетки: заполняют колонку и выравниваются по высоте */
+.grid-row > [class*="col-"] {
+  display: flex;
+}
+
+.grid-row .card {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+}
+
+/* «Порядок действий»: шаг — номер и текст (составной компонент) */
+.step {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid #c99a2a;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(58, 16, 8, 0.08);
+}
+
+.step__num {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  color: #fff7ec;
+  background: #c99a2a;
+  border-radius: 50%;
+}
+
+.step p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* боковая колонка: закрепляется при прокрутке только на широком экране */
+@media (min-width: 992px) {
+  .page-aside {
+    position: sticky;
+    top: 64px;
+    align-self: start;
+  }
+}

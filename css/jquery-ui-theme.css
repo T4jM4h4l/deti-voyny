@@ -1,0 +1,323 @@
+/* jquery-ui-theme.css — согласование темы jQuery UI с оформлением портала (Занятие 7, задание 1) */
+
+.ui-widget {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+}
+
+/* фон и рамки панелей */
+.ui-widget-content {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* заголовки панелей — тёмно-красная полоса в стиле портала,
+   одинаково читаемая в светлой и тёмной темах */
+.ui-widget-header {
+  background: #8e1218;
+  color: #ffffff;
+  border: 1px solid #7a1218;
+}
+
+/* значки (стрелки) в заголовках — светлые, иначе тонут на тёмно-красном фоне */
+.ui-widget-header .ui-icon {
+  background-image: url("images/ui-icons_ffffff_256x240.png");
+}
+
+.ui-widget-content,
+.ui-widget-header,
+.ui-state-default,
+.ui-state-hover,
+.ui-state-active,
+.ui-state-highlight,
+.ui-state-error {
+  background-image: none;
+}
+
+/* обычное и наведённое состояния */
+.ui-state-default {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.ui-state-hover {
+  background: var(--surface);
+  border-color: var(--link);
+  color: var(--link);
+}
+
+.ui-state-focus {
+  outline: 2px solid var(--link);
+  outline-offset: 1px;
+}
+
+/* активное (выбранное) состояние */
+.ui-state-active {
+  background: var(--link);
+  border-color: var(--link);
+  color: #ffffff;
+}
+
+.ui-state-highlight {
+  background: #f5cf5b;
+  border: 1px solid var(--amber);
+  color: #262626;
+}
+
+.ui-state-error {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #ffffff;
+}
+
+.ui-state-error-text {
+  color: var(--accent);
+}
+
+/* кнопки */
+.ui-button {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.ui-button.ui-state-hover {
+  background: #8e1218;
+  border-color: #8e1218;
+  color: #ffffff;
+}
+
+.ui-button .ui-icon {
+  background-image: url("images/ui-icons_ffffff_256x240.png");
+}
+
+/* ползунок (slider) */
+.ui-slider {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+}
+
+.ui-slider-range {
+  background: var(--link);
+}
+
+.ui-slider-handle {
+  background: var(--surface);
+  border: 1px solid var(--link);
+}
+
+.ui-slider-handle.ui-state-hover,
+.ui-slider-handle.ui-state-active {
+  background: var(--link);
+}
+
+/* индикатор выполнения (progressbar) */
+.ui-progressbar {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+}
+
+.ui-progressbar-value {
+  background: var(--link);
+  border: 1px solid var(--link);
+}
+
+/* спиннер «Номер проверки»: узкое поле, рамку рисует сам input */
+.ui-spinner {
+  width: 100%;
+  max-width: 9em;
+}
+
+.ui-spinner.ui-widget-content {
+  background: transparent;
+  border: none;
+}
+
+.ui-spinner .ui-spinner-input {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding-right: 2.4em;
+}
+
+/* вкладки */
+/* jQuery UI вешает на контейнер класс ui-widget-content с белой подложкой
+   и рамкой — заменяем её на тёплую бежевую скруглённую подложку без рамок */
+.ui-tabs {
+  padding: 16px;
+  background: var(--bg);
+  border: none;
+  border-radius: 12px;
+}
+
+.ui-tabs .ui-tabs-nav {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-tab {
+  margin-right: 4px;
+  border: none;
+  border-radius: 8px 8px 0 0;
+}
+
+/* неактивные вкладки: без рамок и плашек, приглушённый текст */
+.ui-tabs .ui-tabs-nav li.ui-tabs-tab:not(.ui-tabs-active) {
+  background: transparent;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-tab:not(.ui-tabs-active) a {
+  color: var(--muted);
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-tab:not(.ui-tabs-active):hover {
+  background: var(--surface);
+}
+
+/* активная вкладка: тёмно-красная плашка (важно: активный li сохраняет
+   и ui-state-default, и ui-state-active — поэтому исключаем его явно) */
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  background: #8e1218;
+  border: none;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a {
+  color: #ffffff;
+}
+
+.ui-tabs .ui-tabs-panel {
+  padding: 16px 0 0;
+  background: transparent;
+  border: none;
+}
+
+/* аккордеон */
+.ui-accordion .ui-accordion-header {
+  background: var(--surface-alt);
+}
+
+.ui-accordion .ui-accordion-header-active {
+  background: #8e1218;
+  color: #ffffff;
+}
+
+/* затемняющая подложка диалогового окна */
+.ui-widget-overlay {
+  background: #000000;
+  opacity: 0.5;
+}
+
+/* диалоговое окно */
+.ui-dialog {
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  max-width: calc(100% - 32px);
+}
+
+.ui-dialog .ui-dialog-titlebar {
+  border: none;
+  border-radius: 12px 12px 0 0;
+}
+
+.ui-dialog .ui-dialog-content {
+  padding: 16px 18px;
+  background: var(--surface);
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+  margin: 0;
+  padding: 10px 14px 14px;
+  border: none;
+  background: transparent;
+}
+
+/* ===== выбор даты (datepicker) ===== */
+.ui-datepicker {
+  padding: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.ui-datepicker .ui-datepicker-header {
+  border-radius: 8px;
+}
+
+/* кнопки «предыдущий/следующий месяц»: светлые стрелки на полупрозрачной плашке */
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  width: 1.8em;
+  height: 1.8em;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+/* при наведении стрелки становятся красными на белом фоне */
+.ui-datepicker .ui-datepicker-prev-hover .ui-icon,
+.ui-datepicker .ui-datepicker-next-hover .ui-icon {
+  background-image: url("images/ui-icons_cc0000_256x240.png");
+}
+
+/* выпадающие списки месяца и года */
+.ui-datepicker .ui-datepicker-title select {
+  padding: 1px 4px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+/* названия дней недели */
+.ui-datepicker th {
+  color: var(--muted);
+}
+
+/* дни месяца */
+.ui-datepicker td a,
+.ui-datepicker td span {
+  color: var(--text);
+}
+
+.ui-datepicker td a.ui-state-hover {
+  background: var(--surface-alt);
+  border: 1px solid var(--link);
+  color: var(--link);
+}
+
+.ui-datepicker td .ui-state-active {
+  background: var(--link);
+  border: 1px solid var(--link);
+  color: #ffffff;
+}
+
+/* панель кнопок «Сегодня» и «Закрыть» */
+.ui-datepicker .ui-datepicker-buttonpane button {
+  padding: 5px 12px;
+  font: inherit;
+  font-size: 13px;
+  color: #ffffff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button.ui-state-hover {
+  background: #8e1218;
+  border-color: #8e1218;
+}

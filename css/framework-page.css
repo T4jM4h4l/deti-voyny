@@ -1,0 +1,67 @@
+/* framework-page.css — небольшое оформление страниц на Bootstrap
+   (Занятие 8, задания 2, 3, 5, 7): шапка, подвал и вспомогательные блоки. */
+
+/* шапка портала средствами компонента navbar фреймворка */
+.navbar-portal {
+  background-color: #8e1218;
+  border-bottom: 2px solid #1c6e37;
+}
+
+.navbar-portal .navbar-brand,
+.navbar-portal .nav-link {
+  color: #fff7ec;
+}
+
+.navbar-portal .navbar-brand:hover,
+.navbar-portal .navbar-brand:focus,
+.navbar-portal .nav-link:hover,
+.navbar-portal .nav-link:focus {
+  color: #f2d98a;
+}
+
+.navbar-portal .nav-link.active {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.navbar-portal .navbar-toggler {
+  border-color: rgba(255, 247, 236, 0.6);
+}
+
+.navbar-portal .navbar-toggler-icon {
+  filter: invert(1) brightness(1.4);
+}
+
+/* логотип в шапке (аналог логотипа страниц проекта, 1:1 по содержанию) */
+.navbar-portal .brand-logo {
+  width: 28px;
+  height: 28px;
+}
+
+/* подвал в оформлении проекта */
+.footer-portal {
+  color: #e8dcc4;
+  background-image: linear-gradient(180deg, #6b4a2b, #4a3320);
+  border-top: 2px solid #c8202a;
+}
+
+.footer-portal h2,
+.footer-portal h3 {
+  color: #f2d98a;
+}
+
+.footer-portal a {
+  color: #e8dcc4;
+  text-decoration: none;
+}
+
+.footer-portal a:hover,
+.footer-portal a:focus {
+  color: #f2d98a;
+  text-decoration: underline;
+}
+
+.catalog-sidebar .card {
+  height: 100%;
+}

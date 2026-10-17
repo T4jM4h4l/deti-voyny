@@ -1,0 +1,74 @@
+/* framework-compat.css — устранение конфликтов между Bootstrap и стилями проекта
+   (Занятие 8, задание 6). Подключается сразу после bootstrap.min.css и ДО файлов
+   проекта: гасит правила Reboot, затем стили проекта снова получают приоритет. */
+
+/* 1. Reboot фреймворка задаёт отступы и внутренние поля базовым элементам
+   селекторами тегов. Такие правила выигрывают у универсального сброса проекта
+   (`* { margin: 0; padding: 0 }`) по специфичности, поэтому возвращаем
+   значения проекта. */
+p,
+dl,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ol,
+ul {
+  padding-left: 0;
+}
+
+/* 2. Кнопка фреймворка добавляет рамку 1px, которой в проекте нет
+   (границы проекта построены на тени inset). */
+.btn {
+  border: none;
+}
+
+/* 3. Карточка фреймворка всегда флекс-контейнер; в проекте она блочная
+   до 768px и становится флекс-колонкой только от 768px. Ограничиваем
+   переопределение мобильным диапазоном, чтобы не ломать планшетную сетку. */
+@media (max-width: 767.98px) {
+  .card {
+    display: block;
+  }
+}
+
+/* 4. Цветовые утилиты фреймворка (bg-body, bg-body-tertiary,
+   text-body-secondary, border, text-danger, text-success) берут значения из
+   переменных --bs-*, которые переключаются атрибутом data-bs-theme, а не
+   классом темы проекта .theme-dark. Привязываем их к палитре проекта для
+   светлой и тёмной темы, чтобы утилиты не ломались в тёмной теме (Занятие 10). */
+:root {
+  --bs-body-bg: var(--surface);
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-body-color: var(--text);
+  --bs-body-color-rgb: 38, 38, 38;
+  --bs-secondary-color: var(--muted);
+  --bs-tertiary-bg: var(--surface-alt);
+  --bs-tertiary-bg-rgb: 238, 242, 230;
+  --bs-border-color: var(--border);
+  --bs-danger-rgb: 165, 20, 27;
+  --bs-success-rgb: 28, 110, 55;
+  --bs-primary-rgb: 142, 18, 24;
+}
+
+html.theme-dark {
+  --bs-body-bg: var(--surface);
+  --bs-body-bg-rgb: 38, 38, 43;
+  --bs-body-color: var(--text);
+  --bs-body-color-rgb: 233, 231, 226;
+  --bs-secondary-color: var(--muted);
+  --bs-tertiary-bg: var(--surface-alt);
+  --bs-tertiary-bg-rgb: 48, 48, 54;
+  --bs-border-color: var(--border);
+  --bs-danger-rgb: 214, 74, 74;
+  --bs-success-rgb: 131, 207, 144;
+  --bs-primary-rgb: 240, 166, 166;
+}

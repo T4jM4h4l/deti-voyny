@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Дети войны</title>
+  <!-- фреймворк подключается перед стилями проекта: правила проекта перекрывают его -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- слой совместимости: гасит конфликты Reboot и компонентов фреймворка -->
+  <link rel="stylesheet" href="css/framework-compat.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/jquery-ui-theme.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <!-- адаптивные страницы на сетке фреймворка (Занятие 9) -->
+  <link rel="stylesheet" href="css/grid-pages.css">
+  <script src="js/jquery-3.7.1.min.js" defer></script>
+  <script src="js/jquery-ui.min.js" defer></script>
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<header>
+  <!-- логотип и название портала -->
+  <div class="brand">
+    <img class="logo" src="assets/img/logo.svg" alt="">
+    <h1>Дети войны</h1>
+    <p>Белорусские пионеры в тылу и на фронте</p>
+  </div>
+
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">Тёмная тема</button>
+
+  <p class="status"><img class="star" src="assets/img/logo.svg" alt=""> Архив пополняется: материалы оцифровываются</p>
+
+  <!-- бегущая строка (два одинаковых блока — для бесшовного повтора) -->
+  <div class="ticker">
+    <div class="ticker-set">
+      <span>22 июня 1941 — 9 мая 1945</span>
+      <span>Мы помним каждого</span>
+      <span>Судьбы детей Беларуси</span>
+      <span>Пионеры и партизаны</span>
+      <span>Музейные архивы</span>
+    </div>
+    <div class="ticker-set" aria-hidden="true">
+      <span>22 июня 1941 — 9 мая 1945</span>
+      <span>Мы помним каждого</span>
+      <span>Судьбы детей Беларуси</span>
+      <span>Пионеры и партизаны</span>
+      <span>Музейные архивы</span>
+    </div>
+  </div>
+</header>
+
+<nav class="navbar navbar-expand-lg topnav-portal" aria-label="Основная навигация">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img class="logo" src="assets/img/logo.svg" alt="">
+      <span>Дети войны</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Переключить навигацию">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#about" aria-current="page">О проекте</a></li>
+        <li class="nav-item"><a class="nav-link" href="#cards">Разделы</a></li>
+        <li class="nav-item"><a class="nav-link" href="#history">Хроника</a></li>
+        <li class="nav-item"><a class="nav-link" href="#archive">Музейный архив</a></li>
+        <li class="nav-item"><a class="nav-link" href="checklist.html">Чек-лист</a></li>
+        <li class="nav-item"><a class="nav-link" href="registry.html">Каталог записей</a></li>
+        <li class="nav-item"><a class="nav-link" href="knowledge.html">Проверка знаний</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- блок-герой -->
+  <section class="hero">
+    <img class="hero-star" src="assets/img/logo.svg" alt="">
+    <p class="hero-kicker">1941 — 1945 · Великая Отечественная война</p>
+    <h2>Помним каждую детскую судьбу</h2>
+    <p class="hero-text">
+      Истории белорусских девочек и мальчиков, чьё детство выпало на годы
+      войны: юные партизаны, труженики тыла, свидетели оккупации.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-hero" href="#cards">Смотреть разделы</a>
+      <a class="btn btn-ghost" href="#archive">Музейный архив</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>О проекте</h2>
+    <p>
+      «Дети войны» — учебный проект по веб-программированию. Ресурс
+      рассказывает о детях Беларуси в 1941–1945 годах: о пионерах
+      и подростках в партизанских отрядах, о труде в тылу и о документах,
+      которые хранят музейные архивы.
+    </p>
+  </section>
+
+  <section id="principles">
+    <div class="principles-wrap">
+      <div class="principles-main">
+        <h2>Основные положения по теме</h2>
+        <p>
+          Темы портала — судьбы белорусских детей в годы Великой Отечественной
+          войны и память о них. Кратко о главном.
+        </p>
+        <ul>
+          <li>К началу войны пионерское движение в БССР охватывало большинство школьников, а с первых дней боёв пионеры и комсомольцы помогали на оборонных работах и в госпиталях.</li>
+          <li>На оккупированной территории Беларуси школы были закрыты; детей и подростков привлекали к принудительному труду и угоняли на работы в Германию.</li>
+          <li>Тысячи подростков сражались в партизанских отрядах и подполье как связные, разведчики и подрывники. Среди них — белорусские пионеры Марат Казей, Зина Портнова и другие.</li>
+          <li>В советском тылу эвакуированные белорусские дети учились и работали на заводах и в колхозах наравне со взрослыми.</li>
+          <li>Память о детях войны сохраняют музеи, мемориалы (в том числе «Хатынь»), поисковое движение и архивные фонды.</li>
+        </ul>
+      </div>
+
+      <aside class="note" aria-labelledby="hero-sources">
+        <h3 id="hero-sources">Источники</h3>
+        <ul>
+          <li><a href="https://warmuseum.by/" target="_blank" rel="noopener">Белорусский государственный музей истории Великой Отечественной войны</a></li>
+          <li><a href="https://khatyn.by/" target="_blank" rel="noopener">Государственный мемориальный комплекс «Хатынь»</a></li>
+          <li><a href="https://archives.gov.by/" target="_blank" rel="noopener">Национальный архив Республики Беларусь</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="cards">
+    <h2>Разделы</h2>
+
+    <div class="row g-4 grid-row">
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="card h-100">
+          <img class="card-img-top" src="assets/img/fates.svg" alt="Старая фотография в рамке">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title">Судьбы детей</h3>
+            <p class="card-text">Истории мальчишек и девчонок, чьё детство прервала война: эвакуация, голод, разлука с семьёй.</p>
+            <a class="btn mt-auto align-self-start" href="section-1.html">Подробнее</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="card card-radial h-100">
+          <img class="card-img-top" src="assets/img/pioneers.svg" alt="Пионерская звезда">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title">Пионеры и партизаны</h3>
+            <p class="card-text">Связистые и разведчики, подносчики боеприпасов, участники подпольных отрядов в белорусских лесах.</p>
+            <a class="btn mt-auto align-self-start" href="section-2.html">Подробнее</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="card h-100">
+          <img class="card-img-top" src="assets/img/tyl.svg" alt="Заводской цех — труд в тылу">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title">Тыл: труд и лишения</h3>
+            <p class="card-text">Подростки на предприятиях и в поле, школьники в колхозах, работа наравне со взрослыми.</p>
+            <a class="btn mt-auto align-self-start" href="section-3.html">Подробнее</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="card h-100">
+          <img class="card-img-top" src="assets/img/museum.svg" alt="Здание музея с колоннами">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title">Музейный архив</h3>
+            <p class="card-text">Фонды и экспонаты, цифровые копии писем и дневников, документы военных лет.</p>
+            <a class="btn mt-auto align-self-start" href="section-4.html">Подробнее</a>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="history">
+    <h2>Хроника военных лет</h2>
+    <ul>
+      <li><strong>22 июня 1941</strong> — начало Великой Отечественной войны.</li>
+      <li><strong>Июль 1941</strong> — оккупация Минска и эвакуация детей в тыл.</li>
+      <li><strong>1941–1944</strong> — годы оккупации, партизанское движение в Беларуси.</li>
+      <li><strong>3 июля 1944</strong> — освобождение Минска в ходе операции «Багратион».</li>
+      <li><strong>9 мая 1945</strong> — Победа.</li>
+    </ul>
+  </section>
+
+  <section id="news">
+    <h2>Новости и анонсы</h2>
+
+    <!-- поиск и фильтрация новостей по тексту -->
+    <div class="search">
+      <label class="search__label" for="news-search">Поиск по новостям</label>
+      <input class="search__input" id="news-search" type="search" placeholder="Введите текст для поиска..." autocomplete="off">
+      <p class="search__count" id="news-search-count" aria-live="polite"></p>
+    </div>
+
+    <div class="news-list">
+
+      <article class="news-item">
+        <time class="news-date" datetime="2026-05-09">9 мая 2026</time>
+        <h3>Помним каждую детскую судьбу: итоги акции к 9 мая</h3>
+        <p>
+          В школьном музее прошёл вечер памяти, посвящённый детям войны.
+          Участники делились историями семей, сохранёнными фотографиями
+          и фронтовыми письмами.
+        </p>
+        <a class="news-link" href="#">Подробнее</a>
+      </article>
+
+      <article class="news-item">
+        <time class="news-date" datetime="2026-03-21">21 марта 2026</time>
+        <h3>Оцифрованы письма пионеров-партизан</h3>
+        <p>
+          В раздел «Музейный архив» добавлены цифровые копии писем
+          и дневников юных партизан из фондов музея — материалы
+          доступны для просмотра.
+        </p>
+        <a class="news-link" href="#">Подробнее</a>
+      </article>
+
+      <article class="news-item">
+        <time class="news-date" datetime="2026-02-12">12 февраля 2026</time>
+        <h3>Онлайн-выставка «Детство, опалённое войной»</h3>
+        <p>
+          Открылась виртуальная выставка о жизни белорусских детей
+          в 1941–1945 годах: эвакуация, трудовой фронт и партизанские
+          отряды глазами самих ребят.
+        </p>
+        <a class="news-link" href="#">Подробнее</a>
+      </article>
+
+      <article class="news-item">
+        <time class="news-date" datetime="2026-01-27">27 января 2026</time>
+        <h3>Урок памяти в школьном музее</h3>
+        <p>
+          Учащиеся встретились с ветеранами и поисковым отрядом,
+          узнали о судьбах сверстников, погибших в годы Великой
+          Отечественной войны.
+        </p>
+        <a class="news-link" href="#">Подробнее</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="archive">
+    <h2>Музейный архив</h2>
+    <p>
+      Основа ресурса — документы и свидетельства военных лет: письма,
+      дневники, фотографии и наградные документы из музейных фондов
+      и государственных архивов.
+    </p>
+
+    <h3>Источники</h3>
+    <ul>
+      <li><a href="https://warmuseum.by/" target="_blank" rel="noopener">Белорусский государственный музей истории Великой Отечественной войны</a></li>
+      <li><a href="https://khatyn.by/" target="_blank" rel="noopener">Государственный мемориальный комплекс «Хатынь»</a></li>
+      <li><a href="https://archives.gov.by/" target="_blank" rel="noopener">Национальный архив Республики Беларусь</a></li>
+    </ul>
+
+    <a class="btn" href="section-4.html">Перейти в раздел «Музейный архив»</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3>Контакты учебного заведения</h3>
+      <ul>
+        <li>Адрес: г. Пинск, ул. Федотова, 36</li>
+        <li>Телефон: +375 29 292-92-92</li>
+        <li>Почта: otvet@pgktit.by</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Источники по теме</h3>
+      <ul>
+        <li><a href="https://warmuseum.by/" target="_blank" rel="noopener">Белорусский государственный музей истории ВОВ</a></li>
+        <li><a href="https://khatyn.by/" target="_blank" rel="noopener">Мемориальный комплекс «Хатынь»</a></li>
+        <li><a href="https://archives.gov.by/" target="_blank" rel="noopener">Национальный архив Республики Беларусь</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="footer-bottom">
+    © 2026 «Дети войны» · Учебная практика «Веб-программирование»
+  </p>
+</footer>
+
+<script src="js/search.js" defer></script>
+</body>
+</html>

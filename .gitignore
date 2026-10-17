@@ -1,0 +1,30 @@
+# Служебные файлы ОС/редакторов
+.DS_Store
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+desktop.ini
+
+# Резервные копии и временные файлы
+*~
+*.bak
+*.bak?
+*.orig
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Блокировки офисных программ
+.~lock.*
+
+# Каталоги редакторов/IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Вывод инструментов проверки
+node_modules/
+.w3c-validator/
+*.log

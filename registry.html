@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог записей — Дети войны</title>
+  <!-- фреймворк подключается перед стилями проекта: правила проекта перекрывают его -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- слой совместимости: гасит конфликты Reboot и компонентов фреймворка -->
+  <link rel="stylesheet" href="css/framework-compat.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/jquery-ui-theme.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <script src="js/jquery-3.7.1.min.js" defer></script>
+  <script src="js/jquery-ui.min.js" defer></script>
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<header>
+  <div class="brand">
+    <img class="logo" src="assets/img/logo.svg" alt="">
+    <p class="brand-name">Дети войны</p>
+    <p>Белорусские пионеры в тылу и на фронте</p>
+  </div>
+
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">Тёмная тема</button>
+
+  <p class="status"><img class="star" src="assets/img/logo.svg" alt=""> Архив пополняется: материалы оцифровываются</p>
+
+  <div class="ticker">
+    <div class="ticker-set">
+      <span>22 июня 1941 — 9 мая 1945</span>
+      <span>Мы помним каждого</span>
+      <span>Судьбы детей Беларуси</span>
+      <span>Пионеры и партизаны</span>
+      <span>Музейные архивы</span>
+    </div>
+    <div class="ticker-set" aria-hidden="true">
+      <span>22 июня 1941 — 9 мая 1945</span>
+      <span>Мы помним каждого</span>
+      <span>Судьбы детей Беларуси</span>
+      <span>Пионеры и партизаны</span>
+      <span>Музейные архивы</span>
+    </div>
+  </div>
+</header>
+
+<nav class="navbar navbar-expand-lg topnav-portal" aria-label="Основная навигация">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img class="logo" src="assets/img/logo.svg" alt="">
+      <span>Дети войны</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Переключить навигацию">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html#about">О проекте</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#cards">Разделы</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#history">Хроника</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#archive">Музейный архив</a></li>
+        <li class="nav-item"><a class="nav-link" href="checklist.html">Чек-лист</a></li>
+        <li class="nav-item"><a class="nav-link active" href="registry.html" aria-current="page">Каталог записей</a></li>
+        <li class="nav-item"><a class="nav-link" href="knowledge.html">Проверка знаний</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+  <section>
+    <h1>Каталог записей</h1>
+    <p>Единый каталог архивных записей проекта «Дети войны». Используйте поиск, выбор раздела и сортировку, чтобы найти нужные материалы.</p>
+
+    <h2>Поиск и фильтрация</h2>
+
+    <form class="row g-3 align-items-end" id="registry-filters" role="search">
+      <div class="col-12 col-md-6 col-lg-4">
+        <label class="form-label" for="registry-search">Поиск по каталогу</label>
+        <input type="search" class="form-control" id="registry-search" placeholder="Наименование, номер, аннотация..." autocomplete="off">
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <label class="form-label" for="registry-section">Раздел</label>
+        <select class="form-select" id="registry-section">
+          <option value="">Все разделы</option>
+          <option value="Судьбы детей">Судьбы детей</option>
+          <option value="Пионеры и партизаны">Пионеры и партизаны</option>
+          <option value="Тыл: труд и лишения">Тыл: труд и лишения</option>
+          <option value="Музейный архив">Музейный архив</option>
+        </select>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <label class="form-label" for="registry-sort">Сортировка</label>
+        <div class="input-group">
+          <select class="form-select" id="registry-sort">
+            <option value="name-asc">Наименование: А–Я</option>
+            <option value="name-desc">Наименование: Я–А</option>
+            <option value="date-asc">Дата: сначала старые</option>
+            <option value="date-desc">Дата: сначала новые</option>
+          </select>
+          <span class="input-group-text" id="registry-dir" aria-hidden="true">↑</span>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-2">
+        <button class="btn btn-outline w-100" type="button" id="registry-reset">Сбросить фильтры</button>
+      </div>
+    </form>
+
+    <p class="registry-count" id="registry-count" aria-live="polite"></p>
+
+    <p class="registry-status" id="registry-status" role="status"><span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>Загрузка данных…</p>
+    <div class="alert alert-danger" id="registry-error" role="alert" hidden>Не удалось загрузить данные каталога. Попробуйте обновить страницу позже.</div>
+
+    <div class="table-scroll">
+      <table class="data-table registry-table">
+        <caption>Записи каталога</caption>
+        <thead>
+          <tr>
+            <th scope="col">Наименование</th>
+            <th scope="col">Категория</th>
+            <th scope="col">Номер</th>
+            <th scope="col">Дата</th>
+            <th scope="col">Раздел</th>
+            <th scope="col">Аннотация</th>
+          </tr>
+        </thead>
+        <tbody id="registry-body"></tbody>
+      </table>
+    </div>
+
+    <p class="registry-empty" id="registry-empty" hidden>Ничего не найдено. Измените условия поиска.</p>
+
+    <h2>Статистика каталога</h2>
+    <p class="registry-stats-status" id="registry-stats-status" aria-live="polite"></p>
+    <div class="registry-stats" id="registry-stats-chart"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3>Контакты учебного заведения</h3>
+      <ul>
+        <li>Адрес: г. Пинск, ул. Федотова, 36</li>
+        <li>Телефон: +375 29 292-92-92</li>
+        <li>Почта: otvet@pgktit.by</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Источники по теме</h3>
+      <ul>
+        <li><a href="https://warmuseum.by/" target="_blank" rel="noopener">Белорусский государственный музей истории ВОВ</a></li>
+        <li><a href="https://khatyn.by/" target="_blank" rel="noopener">Мемориальный комплекс «Хатынь»</a></li>
+        <li><a href="https://archives.gov.by/" target="_blank" rel="noopener">Национальный архив Республики Беларусь</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="footer-bottom">
+    © 2026 «Дети войны» · Учебная практика «Веб-программирование»
+  </p>
+</footer>
+
+<script src="assets/data/records.js" defer></script>
+<script src="js/registry.js" defer></script>
+</body>
+</html>
