@@ -28,3 +28,8 @@ desktop.ini
 node_modules/
 .w3c-validator/
 *.log
+
+# Презентация (не публикуется в репозитории)
+presentation.html
+css/presentation.css
+js/presentation.js
