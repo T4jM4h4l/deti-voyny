@@ -4,6 +4,7 @@
   var deck = document.getElementById('deck');
   var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
   var fill = document.getElementById('deck-progress-fill');
+  var counter = document.getElementById('deck-counter');
 
   if (!deck || !slides.length) {
     return;
@@ -20,7 +21,15 @@
       fill.style.width = ((index + 1) * 100 / slides.length) + '%';
     }
 
-    history.replaceState(null, '', '#slide-' + (index + 1));
+    if (counter) {
+      counter.textContent = (index + 1) + ' / ' + slides.length;
+    }
+
+    try {
+      history.replaceState(null, '', '#slide-' + (index + 1));
+    } catch (error) {
+      location.hash = 'slide-' + (index + 1);
+    }
   }
 
   function go(delta) {

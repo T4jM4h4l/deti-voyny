@@ -25,19 +25,20 @@ body {
 
 .skip-link {
   position: absolute;
-  left: -9999px;
-  z-index: 2000;
-  padding: 10px 18px;
+  top: -60px;
+  left: 0;
+  padding: 12px 20px;
+  background: var(--p-heading);
   color: #ffffff;
-  background: #8e1218;
-  border-radius: 0 0 8px 0;
+  z-index: 60;
+  transition: top 0.2s ease;
 }
 
 .skip-link:focus {
-  left: 0;
+  top: 0;
 }
 
-/* ---------------------------------------------------------------- каркас */
+/* ---------------------------------------------------------------- слайды */
 .deck {
   position: relative;
   height: 100vh;
@@ -49,9 +50,9 @@ body {
   display: none;
   position: absolute;
   inset: 0;
-  padding: 72px 96px;
-  overflow-y: auto;
-  background: linear-gradient(180deg, #ffffff, #f7f2e6);
+  padding: 64px 72px;
+  overflow: auto;
+  background: radial-gradient(circle at 15% 10%, #ffffff, #f2ede1 70%);
 }
 
 .slide.is-active {
@@ -62,11 +63,11 @@ body {
 
 .slide__inner {
   width: 100%;
-  max-width: 1120px;
+  max-width: 1180px;
 }
 
 .slide--center .slide__inner {
-  max-width: 920px;
+  max-width: 960px;
   margin: 0 auto;
   text-align: center;
 }
@@ -94,6 +95,22 @@ body {
   width: 0;
   height: 100%;
   background: linear-gradient(90deg, #8e1218, #1c6e37);
+  transition: width 0.35s ease;
+}
+
+/* ---------------------------------------------------------------- счётчик слайдов */
+.deck-counter {
+  position: fixed;
+  right: 18px;
+  bottom: 16px;
+  padding: 6px 14px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: var(--p-heading);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--p-border);
+  border-radius: 999px;
+  z-index: 50;
 }
 
 /* ---------------------------------------------------------------- заголовки и текст */
@@ -101,9 +118,10 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 26px;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 42px;
+  line-height: 1.15;
   color: var(--p-heading);
 }
 
@@ -119,100 +137,47 @@ body {
   background: url("../assets/img/star-red.svg") center / contain no-repeat;
 }
 
+.goal {
+  margin-bottom: 24px;
+  padding: 18px 22px;
+  font-size: 21px;
+  line-height: 1.45;
+  color: #3d2b1f;
+  background: #fbf3dd;
+  border-left: 6px solid var(--p-accent);
+  border-radius: 12px;
+}
+
 .points {
   list-style: none;
 }
 
 .points li {
-  position: relative;
-  margin-bottom: 14px;
-  padding: 16px 22px 16px 56px;
-  font-size: 21px;
+  padding: 14px 20px;
+  font-size: 20px;
   line-height: 1.4;
   background: #ffffff;
-  border-left: 5px solid var(--p-accent);
+  border-left: 5px solid var(--p-link);
   border-radius: 10px;
   box-shadow: 0 6px 16px rgba(58, 16, 8, 0.08);
 }
 
-.slide--center .points {
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: left;
+.points li + li {
+  margin-top: 12px;
 }
 
 .points li::before {
   content: "";
-  position: absolute;
-  top: 24px;
-  left: 22px;
-  width: 16px;
-  height: 16px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 12px;
   background: var(--p-accent);
   border-radius: 50%;
+  vertical-align: middle;
 }
 
-/* ---------------------------------------------------------------- иллюстрации */
-.slide__media img {
-  display: block;
-  width: 100%;
-  height: auto;
-  background: #ffffff;
-  border: 8px solid #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 22px 46px rgba(58, 16, 8, 0.28);
-  transform: rotate(-1.5deg);
-}
-
-/* ---------------------------------------------------------------- титульный слайд */
-.slide--title {
-  background: linear-gradient(135deg, #7a1218, #a6291f 48%, #1c6e37);
-}
-
-.slide--title .slide__inner {
-  text-align: center;
-  color: #ffffff;
-}
-
-.slide--title .title-logo {
-  width: 128px;
-  height: 128px;
-  margin: 0 auto 22px;
-  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
-}
-
-.slide--title h1 {
-  margin-bottom: 18px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 64px;
-  color: #ffffff;
-}
-
-.slide--title .subtitle {
-  margin-bottom: 8px;
-  font-size: 28px;
-  color: #f6e7c4;
-}
-
-.slide--title .lead {
-  font-size: 20px;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.slide--title .slide__author {
-  margin-top: 44px;
-  font-size: 21px;
-  color: #f4e9d6;
-}
-
-.slide--title .hint {
-  margin-top: 28px;
-  font-size: 15px;
-  letter-spacing: 0.4px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/* ---------------------------------------------------------------- числовые показатели */
+/* ---------------------------------------------------------------- показатели и метки */
 .stats {
   display: flex;
   flex-wrap: wrap;
@@ -234,32 +199,29 @@ body {
   display: block;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 52px;
-  line-height: 1;
-  color: var(--p-accent);
+  color: var(--p-heading);
 }
 
 .stat__label {
   display: block;
-  margin-top: 10px;
-  font-size: 18px;
+  margin-top: 8px;
+  font-size: 17px;
   color: var(--p-muted);
 }
 
-/* ---------------------------------------------------------------- значки (кроссбраузерность, оптимизация) */
 .badges {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 18px;
-  margin-top: 8px;
+  gap: 16px;
 }
 
 .badge {
-  padding: 18px 26px;
+  padding: 16px 24px;
   font-size: 19px;
   color: var(--p-heading);
   background: #ffffff;
-  border: 2px solid var(--p-border);
+  border: 1px solid var(--p-border);
   border-radius: 999px;
   box-shadow: 0 6px 16px rgba(58, 16, 8, 0.1);
 }
@@ -272,13 +234,13 @@ body {
 .tree {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 14px;
   list-style: none;
   text-align: left;
 }
 
 .tree li {
-  padding: 16px 20px;
+  padding: 15px 20px;
   font-size: 19px;
   background: #ffffff;
   border-left: 5px solid var(--p-link);
@@ -290,35 +252,261 @@ body {
   color: var(--p-link);
 }
 
+/* ---------------------------------------------------------------- иллюстрации */
+.slide__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 18px 38px rgba(58, 16, 8, 0.16);
+}
+
+/* ---------------------------------------------------------------- титульный и финальный слайды */
+.slide--title {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.16), transparent 45%),
+    linear-gradient(135deg, #7d1016, #a5141b 45%, #1c6e37);
+  color: #ffffff;
+  text-align: center;
+}
+
+.slide--title .slide__inner {
+  max-width: 980px;
+}
+
+.title-logo {
+  display: block;
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 20px;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35));
+}
+
+.slide--title h1 {
+  margin-bottom: 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 58px;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.slide--title .subtitle {
+  margin: 0 auto 14px;
+  max-width: 720px;
+  font-size: 23px;
+  color: #f6e7c4;
+}
+
+.slide--title .lead {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.slide--title .slide__author {
+  margin-top: 34px;
+  font-size: 20px;
+  color: #f4e9d6;
+}
+
+.slide--title .hint {
+  margin-top: 24px;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.slide--title h2::before,
+.slide--end h2::before {
+  display: none;
+}
+
+/* ---------------------------------------------------------------- анимации появления */
+@keyframes p-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes p-pop-in {
+  from {
+    opacity: 0;
+    transform: translateX(-22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes p-rise {
+  from {
+    opacity: 0;
+    transform: translateY(34px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes p-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.07);
+  }
+}
+
+.slide.is-active .slide__inner {
+  animation: p-fade-up 0.5s ease both;
+}
+
+.slide.is-active h2 {
+  animation: p-fade-up 0.5s ease both;
+  animation-delay: 0.05s;
+}
+
+.slide.is-active .goal {
+  animation: p-fade-up 0.5s ease both;
+  animation-delay: 0.12s;
+}
+
+.slide.is-active .points li,
+.slide.is-active .tree li,
+.slide.is-active .badge,
+.slide.is-active .stat {
+  animation: p-pop-in 0.45s ease both;
+}
+
+.slide.is-active .points li:nth-child(1),
+.slide.is-active .tree li:nth-child(1),
+.slide.is-active .badge:nth-child(1),
+.slide.is-active .stat:nth-child(1) {
+  animation-delay: 0.14s;
+}
+
+.slide.is-active .points li:nth-child(2),
+.slide.is-active .tree li:nth-child(2),
+.slide.is-active .badge:nth-child(2),
+.slide.is-active .stat:nth-child(2) {
+  animation-delay: 0.22s;
+}
+
+.slide.is-active .points li:nth-child(3),
+.slide.is-active .tree li:nth-child(3),
+.slide.is-active .badge:nth-child(3),
+.slide.is-active .stat:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.slide.is-active .points li:nth-child(4),
+.slide.is-active .tree li:nth-child(4),
+.slide.is-active .badge:nth-child(4) {
+  animation-delay: 0.38s;
+}
+
+.slide.is-active .points li:nth-child(5),
+.slide.is-active .tree li:nth-child(5),
+.slide.is-active .badge:nth-child(5) {
+  animation-delay: 0.46s;
+}
+
+.slide.is-active .points li:nth-child(6),
+.slide.is-active .tree li:nth-child(6),
+.slide.is-active .badge:nth-child(6) {
+  animation-delay: 0.54s;
+}
+
+.slide.is-active .points li:nth-child(7),
+.slide.is-active .tree li:nth-child(7),
+.slide.is-active .badge:nth-child(7) {
+  animation-delay: 0.62s;
+}
+
+.slide.is-active .slide__media img {
+  animation: p-rise 0.6s ease both;
+  animation-delay: 0.1s;
+}
+
+.slide--title.is-active .title-logo {
+  animation: p-fade-up 0.6s ease both;
+}
+
+.slide--end.is-active .title-logo {
+  animation: p-pulse 2.6s ease-in-out infinite;
+}
+
 /* ---------------------------------------------------------------- адаптивность */
 @media (max-width: 900px) {
   .slide {
-    padding: 40px 26px;
+    padding: 44px 22px 64px;
   }
 
   .slide--split .slide__inner {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 26px;
   }
 
   .slide__media {
     order: -1;
+    max-width: 360px;
+    margin: 0 auto;
   }
 
   .slide h2 {
-    font-size: 30px;
+    font-size: 29px;
   }
 
+  .goal,
   .points li {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .slide--title h1 {
-    font-size: 38px;
+    font-size: 36px;
+  }
+
+  .slide--title .subtitle {
+    font-size: 18px;
   }
 
   .tree {
     grid-template-columns: 1fr;
+  }
+
+  .deck-counter {
+    font-size: 13px;
+  }
+}
+
+/* ---------------------------------------------------------------- предпочтения движения */
+@media (prefers-reduced-motion: reduce) {
+  .slide.is-active .slide__inner,
+  .slide.is-active h2,
+  .slide.is-active .goal,
+  .slide.is-active .points li,
+  .slide.is-active .tree li,
+  .slide.is-active .badge,
+  .slide.is-active .stat,
+  .slide.is-active .slide__media img,
+  .slide--title.is-active .title-logo,
+  .slide--end.is-active .title-logo {
+    animation: none;
+  }
+
+  .deck-progress span {
+    transition: none;
   }
 }
 
@@ -339,7 +527,8 @@ body {
     background: #ffffff;
   }
 
-  .deck-progress {
+  .deck-progress,
+  .deck-counter {
     display: none;
   }
 
@@ -352,5 +541,9 @@ body {
 
   .points li {
     font-size: 13pt;
+  }
+
+  .slide--title {
+    background: #8e1218;
   }
 }

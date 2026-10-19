@@ -15,26 +15,60 @@
         <div class="slide__inner">
           <img class="title-logo" src="assets/img/logo.svg" alt="Звезда — эмблема проекта «Дети войны»">
           <h1>Проект «Дети войны»</h1>
-          <p class="subtitle">Итоговая практическая работа</p>
-          <p>Учебная практика «Веб-программирование»</p>
+          <p class="subtitle">Сайт-мемориал о судьбах детей Беларуси в годы Великой Отечественной войны</p>
+          <p class="lead">Итоговая практическая работа · Учебная практика «Веб-программирование»</p>
           <p class="slide__author">Выполнил(а): Иванов М.С., группа Т491-23</p>
-          <p class="hint">Навигация: левая кнопка мыши — вперёд, правая — назад</p>
+          <p class="hint">Навигация: левая кнопка мыши — вперёд, правая — назад, либо клавиши ← и →</p>
         </div>
       </section>
 
       <section class="slide slide--split">
         <div class="slide__inner">
           <div class="slide__text">
-            <h2>Назначение проекта</h2>
+            <h2>Актуальность проекта</h2>
             <ul class="points">
-              <li>Сохранить и представить материалы о судьбах людей в годы Великой Отечественной войны.</li>
-              <li>Рассказать о событиях и памятных местах, собрать свидетельства.</li>
-              <li>Дать инструменты самопроверки: чек-лист и проверку знаний.</li>
-              <li>Аудитория: школьники, студенты, педагоги и все, кто интересуется историей.</li>
+              <li>Живых свидетелей войны становится всё меньше — растёт риск утраты личной памяти.</li>
+              <li>Война глазами детей: эвакуация, оккупация, голод, потеря близких, работа в тылу.</li>
+              <li>Проект собирает и систематизирует проверенные материалы для новой аудитории школьников и студентов.</li>
+              <li>Тема сохраняет историческую память Беларуси и опирается на официальные источники.</li>
             </ul>
           </div>
           <div class="slide__media">
             <img src="assets/img/museum.svg" alt="">
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--split">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <h2>Цель и задачи</h2>
+            <p class="goal">Цель — создать учебный сайт, который сохраняет и представляет материалы о судьбах детей в годы Великой Отечественной войны.</p>
+            <ul class="points">
+              <li>Отобрать и проверить исторические материалы по официальным источникам.</li>
+              <li>Подготовить четыре тематических раздела с фактами и свидетельствами.</li>
+              <li>Реализовать адаптивную и доступную вёрстку сайта.</li>
+              <li>Добавить интерактивность: поиск, каталог, чек-лист и проверку знаний.</li>
+              <li>Провести тестирование и оценить качество проекта.</li>
+            </ul>
+          </div>
+          <div class="slide__media">
+            <img src="assets/img/fates.svg" alt="">
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--center">
+        <div class="slide__inner">
+          <h2>Целевая аудитория</h2>
+          <div class="badges">
+            <span class="badge">школьники</span>
+            <span class="badge">студенты</span>
+            <span class="badge">учителя истории</span>
+            <span class="badge">педагоги и воспитатели</span>
+            <span class="badge">родители</span>
+            <span class="badge">работники музеев и библиотек</span>
+            <span class="badge">все, кто интересуется историей</span>
           </div>
         </div>
       </section>
@@ -56,19 +90,70 @@
         </div>
       </section>
 
+      <section class="slide slide--center">
+        <div class="slide__inner">
+          <h2>Тематические разделы сайта</h2>
+          <ul class="tree">
+            <li><b>Раздел 1</b> — Судьбы детей Беларуси в годы войны</li>
+            <li><b>Раздел 2</b> — Пионеры и партизаны</li>
+            <li><b>Раздел 3</b> — Тыл: труд и лишения</li>
+            <li><b>Раздел 4</b> — Музейный архив</li>
+            <li><b>Главная</b> — о проекте, хроника, новости</li>
+            <li><b>Инструменты</b> — чек-лист, каталог, проверка знаний</li>
+          </ul>
+        </div>
+      </section>
+
       <section class="slide slide--split">
         <div class="slide__inner">
           <div class="slide__text">
             <h2>Ключевые технические решения</h2>
             <ul class="points">
-              <li>Семантическая разметка HTML5: header, nav, main, article, footer.</li>
+              <li>Семантическая разметка HTML5: header, nav, main, article, section, footer.</li>
               <li>Адаптивная вёрстка на CSS Grid и Flexbox с медиа-запросами.</li>
               <li>CSS-переменные и переключаемая тёмная тема оформления.</li>
               <li>Доступность: подписи полей, видимый фокус, контраст, alt у изображений.</li>
+              <li>Прогрессивное улучшение и работа сайта офлайн, без внешних CDN.</li>
             </ul>
           </div>
           <div class="slide__media">
-            <img src="assets/img/fates.svg" alt="">
+            <img src="assets/img/pioneers.svg" alt="">
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--split">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <h2>Адаптивность и темы</h2>
+            <ul class="points">
+              <li>Контрольные точки по min-width: 768, 992 и 1024 пикселя.</li>
+              <li>Перестройка сетки по max-width: 480, 520, 760, 860, 1000 и 1100 пикселей.</li>
+              <li>Удобное меню-«бургер» на узких экранах и крупные элементы управления.</li>
+              <li>Светлая и тёмная темы через CSS-переменные, выбор запоминается в браузере.</li>
+              <li>Корректная работа при масштабировании до 200 %.</li>
+            </ul>
+          </div>
+          <div class="slide__media">
+            <img src="assets/img/devices.svg" alt="">
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--split">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <h2>Доступность</h2>
+            <ul class="points">
+              <li>Валидатор не нашёл ошибок ни на одной из 14 страниц.</li>
+              <li>У всех 29 изображений задан текстовый аналог alt.</li>
+              <li>На странице проверки знаний — 42 подписи для 42 полей формы.</li>
+              <li>Контраст текста от 7,99 до 13,89 — выше требований WCAG уровня AA.</li>
+              <li>Есть ссылка «Перейти к содержимому», видимый фокус и ARIA-атрибуты.</li>
+            </ul>
+          </div>
+          <div class="slide__media">
+            <img src="assets/img/a11y.svg" alt="">
           </div>
         </div>
       </section>
@@ -82,28 +167,24 @@
               <li>Каталог записей: поиск, фильтрация, сортировка и статистика.</li>
               <li>Чек-лист: заполнение, сохранение результатов и расчёт итога.</li>
               <li>Проверка знаний: вопросы, валидация формы и вывод результата.</li>
-            </ul>
-          </div>
-          <div class="slide__media">
-            <img src="assets/img/pioneers.svg" alt="">
-          </div>
-        </div>
-      </section>
-
-      <section class="slide slide--split">
-        <div class="slide__inner">
-          <div class="slide__text">
-            <h2>CSS-фреймворк</h2>
-            <ul class="points">
-              <li>Использован Bootstrap 5.3.3.</li>
-              <li>Компоненты: навигация, карточки, аккордеон, модальные окна, уведомления, прогресс, формы.</li>
-              <li>Тематизация через CSS-переменные и собственный слой стилей.</li>
-              <li>Файлы фреймворка не изменяются.</li>
+              <li>Мгновенное переключение темы оформления на любой странице.</li>
             </ul>
           </div>
           <div class="slide__media">
             <img src="assets/img/tyl.svg" alt="">
           </div>
+        </div>
+      </section>
+
+      <section class="slide slide--center">
+        <div class="slide__inner">
+          <h2>Вёрстка и CSS-фреймворк</h2>
+          <ul class="points">
+            <li>Использован Bootstrap 5.3.3, размещённый локально.</li>
+            <li>Компоненты: навигация, карточки, аккордеон, модальные окна, уведомления, прогресс, формы.</li>
+            <li>Тематизация через CSS-переменные и собственный слой стилей проекта.</li>
+            <li>Файлы фреймворка не изменяются; есть страницы сравнения вёрстки «до и после».</li>
+          </ul>
         </div>
       </section>
 
@@ -117,7 +198,7 @@
             </div>
             <div class="stat">
               <span class="stat__num">17/17</span>
-              <span class="stat__label">шагов сквозного сценария</span>
+              <span class="stat__label">шагов сквозного сценария пройдено</span>
             </div>
             <div class="stat">
               <span class="stat__num">AA+</span>
@@ -131,28 +212,38 @@
         <div class="slide__inner">
           <h2>Кроссбраузерность и оптимизация</h2>
           <div class="badges">
-            <span class="badge"><strong>2</strong> браузера</span>
-            <span class="badge"><strong>4</strong> диапазона ширины</span>
-            <span class="badge">масштаб <strong>200 %</strong></span>
+            <span class="badge">проверено в <strong>4</strong> браузерах</span>
+            <span class="badge"><strong>4</strong> диапазона ширины экрана</span>
+            <span class="badge">масштаб до <strong>200 %</strong></span>
             <span class="badge">работа <strong>офлайн</strong></span>
-            <span class="badge">печать памяток</span>
-            <span class="badge">изображения <strong>SVG</strong></span>
+            <span class="badge">печать памяток и страниц</span>
+            <span class="badge">изображения <strong>SVG</strong> от 0,4 КБ</span>
           </div>
         </div>
       </section>
 
       <section class="slide slide--center">
         <div class="slide__inner">
-          <h2>Выводы</h2>
+          <h2>Итоги и направления развития</h2>
           <ul class="points">
             <li>Проект целостен и работоспособен, прошёл комплексное тестирование.</li>
-            <li>Освоены разметка, адаптивная вёрстка, интерактивность, CSS-фреймворк и тестирование.</li>
-            <li>Направления развития: новые разделы, подключение базы данных, форма обратной связи.</li>
+            <li>Освоены разметка HTML, адаптивная вёрстка, интерактивность, CSS-фреймворк и тестирование.</li>
+            <li>Развитие: новые разделы и истории, база данных, форма обратной связи, версия для печати альбома.</li>
           </ul>
+        </div>
+      </section>
+
+      <section class="slide slide--title slide--end">
+        <div class="slide__inner">
+          <img class="title-logo" src="assets/img/star-red.svg" alt="">
+          <h1>Спасибо за внимание!</h1>
+          <p class="subtitle">Помним. Гордимся. Сохраняем.</p>
+          <p class="hint">Готов(а) ответить на ваши вопросы</p>
         </div>
       </section>
     </div>
 
     <div class="deck-progress"><span id="deck-progress-fill"></span></div>
+    <div class="deck-counter" aria-hidden="true"><span id="deck-counter">1 / 15</span></div>
   </body>
 </html>
